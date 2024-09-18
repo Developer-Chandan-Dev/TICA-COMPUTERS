@@ -1,0 +1,116 @@
+.instructor-card {
+  width: 310px;
+  height: 340px;
+  transition: all ease-in-out 0.1s;
+}
+.instructor-card:hover {
+  transform: translateY(-5px);
+}
+.instructor-card .de-icon {
+  transition: all ease-in-out 0.1s;
+  opacity: 0;
+}
+.instructor-card:hover .de-icon {
+  opacity: 0.65;
+}
+.text-color-blue {
+  color: #1b306b;
+}
+.bg-color-blue {
+  background: #1b306b;
+}
+.text-color-cyan {
+  color: #17696e;
+}
+.bg-color-cyan {
+  background: #17696e;
+}
+.border-color-blue {
+  border: 2px solid #1b306b;
+}
+.border-color-cyan {
+  border: 2px solid #17696e;
+}
+.inputBoxes {
+  width: 70% !important;
+  /* justify-content: space-between; */
+  column-gap: 100px !important;
+}
+
+.addNewFieldButton{
+  
+}
+@media (max-width: 1470px) {
+  .inputBoxes {
+    width: 90% !important;
+    justify-content: space-between;
+    column-gap: 100px !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .inputBoxes {
+    width: 85% !important;
+    column-gap: 40px !important;
+  }
+}
+@media (max-width: 1100px) {
+  .inputBoxes {
+    width: 85% !important;
+    column-gap: 20px !important;
+  }
+}
+@media (max-width: 1064px) {
+  .inputBoxes {
+    width: 90% !important;
+  }
+}
+
+@media (max-width: 930px) {
+  .inputBoxes {
+    width: 95% !important;
+  }
+}
+@media (max-width: 860px) {
+  .inputBoxes {
+    width: 98% !important;
+  }
+}
+
+@media (max-width: 835px) {
+  .inputBoxes {
+    width: 98% !important;
+  }
+  .inputBox {
+    width: 100% !important;
+  }
+  .inputBox div {
+    width: 100%;
+  }
+  .inputBox textarea {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .instructor-card {
+    margin: auto;
+  }
+}
+
+@media (max-width: 400px){
+  .instructor-details{
+    padding: 8px 8px 14px 18px !important;
+  }
+}
+@media (max-width: 360px){
+  .instructor-card{
+    height: 400px !important;
+  }
+  .instructor-card button{
+    margin: auto;
+  }
+  .instructor-card button:first-child{
+    margin-bottom: 4px;
+  }
+}

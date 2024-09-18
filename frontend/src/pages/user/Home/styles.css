@@ -1,0 +1,15 @@
+.popularCourses {
+  width: 1000px;
+  margin: 30px auto;
+}
+
+@media (max-width: 1024px) {
+  .popularCourses {
+    width: 100%;
+  }
+}
+
+.pageControl{
+  max-width: 90rem;
+  margin: 0 auto !important;
+}

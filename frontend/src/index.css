@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+  scroll-behavior: smooth;
+}
+
+.active-client-li {
+  color: white !important;
+}
+
+.btn {
+  padding: 7px 16px;
+  background: linear-gradient(#a79df3, #837ff3) !important;
+  font-size: 15px !important;
+}
+
+.left-circle {
+  left: 120px;
+}
+.gradient {
+  /* height: fit-content;
+  z-index: 3;
+  width: 100%;
+  max-width: 640px; */
+  background-image: radial-gradient(
+      at 27% 37%,
+      hsla(215, 98%, 61%, 1) 0px,
+      transparent 0%
+    ),
+    radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
+    radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
+    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
+    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
+  /* position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%; */
+  filter: blur(100px) saturate(150%);
+  /* top: 80px; */
+  opacity: 0.15;
+}
+
+@media (min-width: 1400px) {
+  #root {
+    /* max-width: 1400px; */
+    margin: 0 auto; /* Center the root */
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d8d4d4;
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 700px) {
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+@layer utilities {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .sm {
+    @apply font-medium text-sm px-5 py-2 rounded-full text-blue-800 border border-blue-800 bg-transparent transition-all hover:bg-blue-800 hover:text-white hover:drop-shadow-md hover:shadow;
+  }
+  .back-btn {
+    @apply font-medium text-sm px-3 py-1 rounded-full text-gray-800 border border-transparent hover:border-gray-800 bg-transparent transition-all hover:bg-gray-800 hover:text-white hover:drop-shadow-md hover:shadow;
+  }
+  .desc {
+    @apply mt-5 text-sm text-gray-600 sm:text-base;
+  }
+  .material_btn {
+    @apply text-sm px-6 my-3 font-medium py-[7px] rounded-md text-[#7A7A7A] border border-[#DADAD9] bg-[#f7f8f8] transition-all hover:bg-white;
+  }
+  .addNewFieldBtn {
+    @apply px-[10px] py-[2px] mt-2 rounded bg-slate-50 drop-shadow-md shadow text-lg font-medium transition-all hover:bg-slate-200 hover:shadow-md hover:shadow-slate-300;
+  }
+  .removeFieldBtn {
+    @apply px-[8px] py-[0px] rounded bg-slate-50 drop-shadow-md shadow text-lg font-medium  hover:bg-slate-200;
+  }
+  .enable_btn {
+    @apply px-3 py-[6px] shadow rounded bg-[crimson] border hover:bg-white hover:text-[crimson] border-[crimson] transition-all text-white shadow-blue-300;
+  }
+  .disable_btn {
+    @apply px-3 py-[6px] shadow rounded bg-[#817979] cursor-default border border-[#817979] text-white shadow-blue-300;
+  }
+}

@@ -1,0 +1,87 @@
+.bigInputBox {
+  width: 840px;
+  height: 44px;
+  background: #f8fafc;
+  border-radius: 4px;
+  padding: 4px 12px;
+  box-shadow: 0px 1px 5px #cacaca;
+  font-size: 15px;
+}
+
+.courseInputBox {
+  width: 400px;
+  height: 44px;
+  background: #f8fafc;
+  border-radius: 4px;
+  padding: 5px 12px;
+  box-shadow: 0px 1px 5px #cacaca;
+  font-size: 15px;
+}
+.courseTextarea {
+  width: 400px;
+  height: auto;
+  background: #f8fafc;
+  border-radius: 4px;
+  padding: 4px 12px;
+  box-shadow: 0px 1px 5px #cacaca;
+}
+.courseTextarea textarea {
+  font-size: 15px;
+  resize: none;
+}
+.bigTextarea {
+  width: 840px;
+  height: auto;
+  background: #f8fafc;
+  border-radius: 4px;
+  padding: 4px 12px;
+  box-shadow: 0px 1px 5px #cacaca;
+}
+.bigTextarea textarea {
+  font-size: 15px;
+  resize: none;
+}
+.courseInputBox input {
+  font-size: 15px;
+}
+.courseContentSection {
+  width: auto;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Course Info start */
+#handleOptions:hover #options {
+  display: flex;
+}
+/* Course Info end */
+
+@media (max-width: 1130px) {
+  .bigInputBox {
+    width: 100%;
+  }
+  .bigTextarea {
+    width: 100%;
+  }
+}
+@media (max-width: 640px) {
+  .courseInputBox {
+    width: 100%;
+  }
+  .courseTextarea {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px){
+  .searchBox{
+    width: 90% !important;
+  }
+  .searchBox input{
+    width: 80%;
+  }
+}

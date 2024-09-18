@@ -1,0 +1,19 @@
+@media (max-width: 410px) {
+  .signUpBox {
+    width: 90% !important;
+  }
+  .signUpBox p {
+    padding: 0px 20px;
+  }
+}
+@media (max-width: 350px) {
+  .signInBox {
+    width: 95% !important;
+  }
+  .signUpBox {
+    width: 95% !important;
+  }
+  .signUpBox p {
+    padding: 0px 10px;
+  }
+}

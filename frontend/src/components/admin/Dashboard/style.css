@@ -1,0 +1,100 @@
+.short-sidebar {
+  width: 70px !important;
+}
+.dashboard_banner {
+  background-image: url("../../../assets/images/dashboard-banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+}
+
+.short-sidebar .sidebar-li {
+  width: 45px;
+  height: 40px;
+  padding: 0 !important;
+}
+
+.sidebar-li {
+  width: 95%;
+  padding: 2px;
+  font-size: 13px;
+  color: #b5b9c2 !important;
+  border-radius: 10px;
+  transition: all ease-in;
+  margin: auto;
+  font-weight: 500;
+}
+
+.active-li {
+  background: linear-gradient(#a79df3, #837ff3) !important;
+  color: white !important;
+}
+.active-li svg {
+  fill: #f2f2fd;
+}
+.sidebar-li:hover {
+  background: linear-gradient(#a79df3, #837ff3) !important;
+  color: white !important;
+}
+.sidebar-li:hover svg {
+  fill: #f2f2fd !important;
+}
+
+@media (max-width: 1024px) {
+  .navlist li {
+    width: 45px !important;
+    height: 40px !important;
+    padding: 0 !important;
+  }
+  .sidebar-li {
+    width: 45px !important;
+    height: 40px !important;
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .short-sidebar {
+    width: 60px !important;
+    z-index: 99 !important;
+    box-shadow: 0 0px 12px silver !important;
+  }
+}
+.accountMainBox .accountBox {
+  /* background-color: goldenrod !important; */
+}
+@media (max-width: 400px) {
+  .accountMainBox {
+    padding: 10px 5px !important;
+  }
+  .accountMainBox .accountBox {
+    padding: 15px 10px !important;
+    flex-direction: column;
+  }
+  .accountDetailsForm {
+    width: 300px !important;
+  }
+  .accountActiveBox {
+    width: 300px !important;
+  }
+  .accountDetailsForm form {
+    width: 280px;
+    height: auto;
+  }
+  .accountDetailsForm input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 320px) {
+  .accountDetailsForm {
+    width: 260px !important;
+  }
+  .accountActiveBox {
+    width: 260px !important;
+  }
+  .accountDetailsForm form {
+    width: 240px;
+    height: auto;
+  }
+}

@@ -1,0 +1,36 @@
+.heading {
+  letter-spacing: 2px;
+}
+.heading-bottom {
+  letter-spacing: 4px;
+}
+
+.letter-space-5 {
+  letter-spacing: 2px;
+}
+
+@media (max-width: 1296px) {
+  .contentSection {
+    width: 100% !important;
+    padding: 20px 10px;
+  }
+  .formSection {
+    width: 100% !important;
+    padding: 20px 10px;
+  }
+}
+
+
+@media (max-width: 350px) {
+  .formSection{
+    width: 98% !important;
+    margin: auto;
+  }
+  .formSection form{
+    width: 100%;
+    height: auto !important;
+  }
+  .enquiryInputBox{
+    width: 100% !important;
+  }
+}

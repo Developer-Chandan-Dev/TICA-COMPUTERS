@@ -1,0 +1,15 @@
+.block-user{
+    transition: all 0.3s;
+}
+
+.block-user:hover{
+    background-color: #f84c4c;
+}
+
+.block-user:hover svg{
+    fill: white;
+}
+
+.active-block-user{
+    background-color: #f84c4c !important;
+}

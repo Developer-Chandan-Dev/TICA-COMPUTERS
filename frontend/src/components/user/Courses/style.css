@@ -1,0 +1,113 @@
+.link-circle {
+  left: 7.6rem !important;
+}
+
+.inputFields {
+  width: 18rem;
+}
+
+.admissionForm .inputBoxes{
+  width: 900px !important;
+  justify-content: space-between !important;
+}
+
+
+/* Media Query start here  */
+
+@media (max-width: 1200px) {
+  .admissionForm .inputBoxes{
+    width: 100% !important;
+    column-gap: 40px !important;
+  }
+}
+@media (max-width: 1100px) {
+  .admissionForm .inputBoxes{
+    column-gap: 20px !important;
+  }
+}
+@media (max-width: 1064px) {
+  /* .admissionForm .inputBoxes{
+    width: 90% !important;
+  } */
+}
+
+@media (max-width: 930px) {
+  /* .admissionForm .inputBoxes{
+    width: 95% !important;
+  } */
+}
+@media (max-width: 860px) {
+  /* .admissionForm .inputBoxes{
+    width: 98% !important;
+  } */
+}
+
+@media (max-width: 835px) {
+  .admissionForm .inputBoxes{
+    padding: 12px 4px;
+    width: 90% !important;
+    margin: auto !important;
+  }
+  .inputBoxes {
+    width: 90% !important;
+  }
+  .admissionForm .inputBoxes .inputBox{
+    width: 100% !important;
+    margin: auto 0 !important;
+  }
+  .inputBox div {
+    width: 100%;
+  }
+  .inputBox textarea {
+    width: 100%;
+  }
+}
+
+@media(max-width: 721px){
+  .course-card{
+    margin: auto !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .link-circle {
+    left: 2.75rem !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .course-card {
+    width: 95% !important;
+  }
+  .card-container {
+    width: 95% !important;
+  }
+  .admissionForm .inputBoxes{
+    width: 300px !important;
+  }
+}
+@media (max-width: 350px) {
+  .course-card {
+    width: 98% !important;
+  }
+  .card-container {
+    width: 98% !important;
+  }
+  .card-buttomPart {
+    flex-wrap: wrap !important;
+  }
+  .buttonPart {
+    width: 100% !important;
+    height: 40px;
+    padding-top: 10px !important;
+    padding-bottom: 8px !important;
+  }
+  .buttonPart button {
+    margin-left: 4px;
+  }
+  .admissionForm .inputBoxes{
+    width: 250px !important;
+  }
+}
+
+/* Media Query End Here */

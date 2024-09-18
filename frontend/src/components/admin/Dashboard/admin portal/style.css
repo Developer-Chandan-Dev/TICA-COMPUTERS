@@ -1,0 +1,12 @@
+.adminBanner {
+  background-image: url("../../../../assets/images/4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.instructorBanner{
+  background-image: url("../../../../assets/images/3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}

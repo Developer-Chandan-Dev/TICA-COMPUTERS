@@ -1,0 +1,7 @@
+.contactBanner {
+  background-image: url("../../../assets/images/contact-banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  opacity: 1;
+}

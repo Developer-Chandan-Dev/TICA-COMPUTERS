@@ -1,0 +1,77 @@
+<-------------- Coaching Institute Management ---------------->
+
+RESTful API Endpoints :
+User Management: /api/v1/users, /api/profiles
+Course Management: /api/courses, /api/materials, /api/enrollments
+Assignments and Exams: /api/assignments, /api/submissions, /api/exams, /api/results
+Communication: /api/messages
+Reports: /api/reports
+
+
+Admin ------>
+add course : /api/v1/admin/course/add
+Structure =====>
+
+{
+  "title": "Advanced Python Programming",
+  "description": "Dive deep into advanced Python topics and best practices.",
+  "duration": "8 weeks",
+  "fees": "$ 99.99",
+  "level": "Advanced",
+  "instructor": {
+    "name": "Alice Johnson",
+    "bio": "Senior Python developer with 10 years of experience."
+  },
+  "language": "English",
+  "prerequisites": [
+    "Basic Python knowledge",
+    "OOP concepts"
+  ],
+  "syllabus": [
+    {
+      "title": "Advanced Data Structures",
+      "topics": [
+        {
+          "name": "Heaps",
+          "description": "Learn about binary heaps and their applications."
+        },
+        {
+          "name": "Graphs",
+          "description": "Understand graph algorithms and their uses."
+        }
+      ]
+    },
+    {
+      "title": "Concurrency",
+      "topics": [
+        {
+          "name": "Threads",
+          "description": "Introduction to threads and multithreading in Python."
+        },
+        {
+          "name": "Async Programming",
+          "description": "learn asynchronous programming with async/await."
+        }
+      ]
+    }
+  ],
+  "rating": 4.8,
+  "reviews": [
+    {
+      "student": "Bob Brown",
+      "comment": "Excellent course with in-depth explanations",
+      "rating": 5
+    },
+    {
+      "student": "Sara White",
+      "comment": "A bit challenging but very rewarding.",
+      "rating": 4
+    }
+  ],
+  "enrollments": 200
+}
+
+
+
+delete course : /api/v1/admin/course/delete
+update course : /api/v1/admin/course/update

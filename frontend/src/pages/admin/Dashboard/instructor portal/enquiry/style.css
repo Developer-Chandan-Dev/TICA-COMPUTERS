@@ -1,0 +1,163 @@
+.enquiryDetailsBox {
+  height: 469px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 95%;
+  margin: 0px auto;
+  padding: 10px 0;
+  background: #fff;
+}
+.timeline-container {
+  position: relative;
+  width: 50%;
+}
+
+.left-timeline-container {
+  padding: 8px 36px 8px 8px;
+}
+.right-timeline-container {
+  padding: 8px 8px 8px 36px;
+}
+.text-box {
+  padding: 13px 15px;
+  background: #f0f3f5;
+  position: relative;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.text-box:hover {
+  background-color: #d4ece6;
+}
+
+.left-timeline-container {
+  left: 0;
+}
+.right-timeline-container {
+  left: 50%;
+}
+
+.timeline-container img {
+  position: absolute;
+  width: 40px;
+  border-radius: 50%;
+  right: -20px;
+  top: 32px;
+  z-index: 1;
+}
+
+.right-timeline-container img {
+  left: -20px;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: #f0f3f5;
+  top: 0;
+  left: 50%;
+  margin-left: -1px;
+  z-index: 0;
+  display: block;
+  animation: moveline 6s linear forwards;
+}
+@keyframes moveline {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+.left-timeline-container-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #f0f3f5;
+  right: -10px;
+}
+
+.text-box:hover .left-timeline-container-arrow {
+  border-left: 10px solid #d4ece6;
+}
+.right-timeline-container-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #f0f3f5;
+  left: -10px;
+}
+.text-box:hover .right-timeline-container-arrow {
+  border-right: 10px solid #d4ece6;
+}
+
+.deleteIcon {
+  opacity: 0;
+  transition: all 0.3s;
+}
+.text-box:hover .deleteIcon {
+  opacity: 1;
+}
+
+@media (min-width: 1024px) {
+  .enquiryContainer .enquiryDetailsBox {
+    display: block !important;
+    width: 26% !important;
+    left: 72% !important;
+    top: 132px !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .timeline {
+    margin: 50px auto;
+  }
+  .timeline-container {
+    width: 85%;
+  }
+  .timeline::after {
+    left: 31px;
+  }
+  .container {
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 25px;
+  }
+  .text-box {
+    font-size: 13px;
+  }
+  .text-box small {
+    margin-bottom: 10px;
+  }
+  .right-timeline-container {
+    left: 0;
+  }
+  .left-timeline-container {
+    padding: 8px 8px 8px 8px;
+    left: 55px;
+  }
+  .right-timeline-container {
+    left: 55px;
+    padding: 8px 8px 8px 8px;
+  }
+  .left-timeline-container img,
+  .right-timeline-container img {
+    left: -45px;
+  }
+}
+
+@media (min-height: 1024) {
+}

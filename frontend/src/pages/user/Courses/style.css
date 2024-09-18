@@ -1,0 +1,31 @@
+/* .whatYouLearn {
+  width: 850px;
+} */
+
+
+
+@media (max-width: 960px) {
+  /* .whatYouLearn {
+    width: 80%;
+  } */
+  .topicTextBox {
+    width: 90% !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .courseBanner {
+    height: 350px;
+  }
+}
+@media (max-width: 500px) {
+  .courseBanner {
+    height: 350px;
+    background: green;
+  }
+}
+@media (max-width: 325px) {
+  .courseBanner {
+    height: auto;
+  }
+}

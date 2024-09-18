@@ -1,0 +1,77 @@
+.dashboardPageControl{
+  max-width: 1400px;
+  margin: 0 auto !important;
+}
+
+
+.list {
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all ease-in;
+}
+.list:hover {
+  border-bottom: 2px solid #272727;
+  background-color: #f1f1f1;
+}
+.active-list {
+  border-bottom: 2px solid #272727;
+}
+
+.big-container {
+  width: -webkit-fill-available !important;
+}
+
+.studentTable {
+  width: 1600px !important;
+  font-family: Roboto Medium;
+}
+.studentTable tr {
+  width: 1600px;
+}
+.studentTable tr th {
+  text-align: left;
+  padding-left: 8px;
+}
+.studentTable tr td {
+  text-align: left;
+  padding-left: 8px;
+  font-size: 15px;
+}
+
+@media (max-width: 915px) {
+  .detailsBox {
+    flex-direction: column;
+  }
+  .u-pb-100 {
+    padding-bottom: 100px !important;
+  }
+  .imagePart {
+    width: 100%;
+    margin: auto;
+  }
+  .contentPart {
+    width: 90% !important;
+    margin: auto;
+    padding-top: 0 !important;
+  }
+  .details {
+    padding: 0px 0.5rem 2rem 4.5rem !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .contentPart {
+    padding-left: 1.5rem !important;
+  }
+  .details {
+    padding-left: 3.5rem !important;
+  }
+}
+@media (max-width: 700px) {
+  .contentPart {
+    padding-left: 0rem !important;
+  }
+  .details {
+    padding-left: 2rem !important;
+  }
+}

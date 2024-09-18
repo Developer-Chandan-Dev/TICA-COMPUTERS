@@ -1,0 +1,52 @@
+@media (max-width: 1050px) {
+  .aboutSite {
+    flex-wrap: wrap-reverse;
+    height: auto !important;
+  }
+  .aboutSite img {
+    width: 100%;
+    height: auto !important;
+  }
+  .aboutText {
+    font-size: 1.8rem !important;
+    line-height: 2.2rem !important;
+  }
+}
+@media (max-width: 850px) {
+  .aboutBannerflex {
+    flex-wrap: wrap-reverse;
+    padding-bottom: 30px !important;
+  }
+
+  .aboutBannerflex div:first-child {
+    width: 80% !important;
+    margin: auto;
+  }
+  .aboutBannerflex div:last-child {
+    display: none;
+  }
+  .banner {
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .banner {
+    height: auto !important;
+    padding: 20px 0;
+  }
+  .aboutText {
+    font-size: 1.6rem !important;
+    line-height: 2rem !important;
+  }
+  .aboutBannerflex div p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .aboutText {
+    font-size: 1.4rem !important;
+    line-height: 1.8rem !important;
+  }
+}

@@ -1,6 +1,8 @@
 import "./style.css";
 import { indianDate } from "../../indianDate";
 import PropTypes from "prop-types";
+import useShowImageInSweetAlert from "../../../../../hooks/utils/useShowImageInSweetAlert";
+import userIcon from "../../../../../assets/images/user.png";
 
 const UserNames = ({
   id,
@@ -14,7 +16,11 @@ const UserNames = ({
   onDelete,
   data,
   setData,
+  profilePic,
 }) => {
+  const { showAlertWithImage } = useShowImageInSweetAlert();
+  console.log(data);
+
   return (
     <>
       <tr
@@ -29,13 +35,27 @@ const UserNames = ({
         <td className="px-4"> {indianDate(createdAt)} </td>
         <td className="h-7 px-4 text-gray-500 ">
           <div className="flex items-center justify-center h-7 gap-x-4">
+            <button
+              className="px-3 py-[6px] rounded-md border"
+              onClick={() =>
+                showAlertWithImage(profilePic ? profilePic : userIcon, username)
+              }
+            >
+              Image
+            </button>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
               fill="black"
               onClick={() =>
-                onDelete(id, "/api/v1/admin/present-users", setData, data, "User")
+                onDelete(
+                  id,
+                  "/api/v1/admin/present-users",
+                  setData,
+                  data,
+                  "User"
+                )
               }
               className="bi bi-trash3 cursor-pointer opacity-45 hover:opacity-100"
               viewBox="0 0 16 16"
@@ -83,4 +103,5 @@ UserNames.propTypes = {
   onDelete: PropTypes.func,
   data: PropTypes.array,
   setData: PropTypes.func,
+  profilePic: PropTypes.string,
 };

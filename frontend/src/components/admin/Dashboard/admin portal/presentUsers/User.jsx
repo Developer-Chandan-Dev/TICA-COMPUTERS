@@ -90,7 +90,7 @@ const User = ({ currentPage, setTotalPages, searchTerm }) => {
   return (
     <>
       {data != null
-        ? data.map(({ _id, fullname, username, email, createdAt }, index) => (
+        ? data.map(({ _id, fullname, username, email, createdAt,profilePic }, index) => (
             // eslint-disable-next-line react/jsx-key
             <UserNames
               key={index}
@@ -105,6 +105,7 @@ const User = ({ currentPage, setTotalPages, searchTerm }) => {
               onDelete={handleDelete}
               data={data}
               setData={setData}
+              profilePic={profilePic}
             />
           ))
         : "Loading..."}

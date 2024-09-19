@@ -125,6 +125,7 @@ const updatedRegisteredCandidate = async (req, res) => {
     const id = req.params.id;
     const data = req.body;
     const profilePic = req.file ? req.file.path : null; // Get local file path
+    console.log(profilePic);
 
     let profilePicUrl = null;
     let profilePicPublicId = null;

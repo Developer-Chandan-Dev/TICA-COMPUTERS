@@ -9,7 +9,7 @@ const {
   deleteStudent,
   getMonthlyStudent,
   getWeeklyStudent,
-} = require("../../../controllers/admin/instructor portal/students.admin.controller");
+} = require("../../../controllers/admin/instructor portal/students.controller");
 
 router.post("/:id", upload.single("profilePic"), addStudent); // Add new Student
 router.get("/", getAllStudent); // Get all students

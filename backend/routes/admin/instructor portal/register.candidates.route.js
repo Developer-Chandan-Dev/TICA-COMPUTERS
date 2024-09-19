@@ -9,7 +9,7 @@ const {
   updatedRegisteredCandidate,
   getMonthlyRegistration,
   getWeeklyRegistration,
-} = require("../../../controllers/admin/instructor portal/registration.admin.controller");
+} = require("../../../controllers/admin/instructor portal/registration.controller")
 
 router.get("/", getAllRegisterCandidate);
 router.get("/:id", getRegisterCandidateDetails);

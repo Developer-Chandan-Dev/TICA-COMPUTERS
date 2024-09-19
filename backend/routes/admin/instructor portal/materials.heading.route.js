@@ -5,7 +5,7 @@ const {
   showHeadings,
   deleteHeading,
   updateHeading,
-} = require("../../../controllers/admin/instructor portal/materials.heading.admin.controller");
+} = require("../../../controllers/admin/instructor portal/materials.heading.controller");
 
 router.post("/add", addHeading);
 router.get("/", showHeadings);

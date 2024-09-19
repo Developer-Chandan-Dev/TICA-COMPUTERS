@@ -10,7 +10,7 @@ const {
   getMaterial,
   deleteMaterial,
   updateHomePageMaterial,
-} = require("../../../controllers/admin/instructor portal/materials.admin.controller");
+} = require("../../../controllers/admin/instructor portal/materials.controller");
 
 router.post(
   "/:id/add",

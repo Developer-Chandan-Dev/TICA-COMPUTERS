@@ -22,7 +22,7 @@ const UpdateStudentDetails = ({ studentId }) => {
     address: "",
     mobile: "",
     aadharNo: "",
-    profilePicPublicId:"",
+    profilePicPublicId: "",
   });
   const [courseNames, setCourseNames] = useState(null);
   const [error, setError] = useState(null);
@@ -42,6 +42,7 @@ const UpdateStudentDetails = ({ studentId }) => {
         setError(error);
       });
   }, []);
+  
 
   useEffect(() => {
     const studentDetails = fetch(`/api/v1/instructor/student/${studentId}`);
@@ -56,6 +57,7 @@ const UpdateStudentDetails = ({ studentId }) => {
         setError(error);
       });
   }, [studentId]);
+  console.log(inputs);
 
   const handleGenderChange = (event) => {
     setInputs({ ...inputs, gender: event.target.value });
@@ -85,7 +87,7 @@ const UpdateStudentDetails = ({ studentId }) => {
       address: "",
       mobile: "",
       aadharNo: "",
-      profilePicPublicId:"",
+      profilePicPublicId: "",
     });
   };
 

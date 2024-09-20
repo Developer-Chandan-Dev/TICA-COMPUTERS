@@ -6,7 +6,7 @@ const AccountsManagement = () => {
   const location = useLocation();
 
   return (
-    <section className="w-full  bg-white drop-shadow-md shadow-md rounded p-2 relative">
+    <section className="w-full bg-white drop-shadow-md shadow-md rounded p-2 relative">
       <div className="flex items-center justify-between">
         <h1 className="text-left pl-5 py-5 text-xl text-semibold font-semibold sticky">
           Manage Account

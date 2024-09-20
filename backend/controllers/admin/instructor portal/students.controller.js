@@ -112,9 +112,9 @@ const getStudentDetails = async (req, res) => {
 const updateStudent = async (req, res) => {
   try {
     const studentId = req.params.id;
-    const studentData = req.body;
+    const data = req.body;
     const profilePic = req.file ? req.file.path : null; // Get local file path
-    console.log(profilePic, studentData, studentData.profilePicPublicId);
+    console.log(profilePic, data, data.profilePicPublicId);
 
     let profilePicUrl = null;
     let profilePicPublicId = null;
@@ -126,8 +126,8 @@ const updateStudent = async (req, res) => {
     }
 
     // Delete the old profile picture if a new one is provided
-    if (studentData.profilePicPublicId && profilePic) {
-      await deleteFromCloudinary(studentData.profilePicPublicId);
+    if (data.profilePicPublicId && profilePic) {
+      await deleteFromCloudinary(data.profilePicPublicId);
     }
 
     // Upload the new profile picture if provided
@@ -135,7 +135,7 @@ const updateStudent = async (req, res) => {
       const uploadResult = await uploadToCloudinary(
         profilePic,
         "candidates",
-        `candidates/${studentData.studentName}_${Date.now()}`
+        `candidates/${data.studentName}_${Date.now()}`
       );
       profilePicUrl = uploadResult.secure_url;
       profilePicPublicId = uploadResult.public_id;
@@ -146,8 +146,8 @@ const updateStudent = async (req, res) => {
       studentId,
       {
         profilePic: profilePicUrl,
-        profilePicPublicId: profilePicPublicId ? profilePicPublicId : null,
-        ...studentData,
+        profilePicPublicId: profilePicPublicId,
+        ...data,
       },
       {
         new: true,

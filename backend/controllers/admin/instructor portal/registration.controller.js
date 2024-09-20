@@ -11,6 +11,7 @@ const registerCandidate = async (req, res) => {
   try {
     const data = req.body;
     const profilePic = req.file ? req.file.path : null; // Get local file path
+    console.log(data, profilePic);
 
     const aadharno = await Register.findOne({ aadharNo: data.aadharNo });
     const aadharno2 = await Admission.findOne({ aadharNo: data.aadharNo });
@@ -125,7 +126,7 @@ const updatedRegisteredCandidate = async (req, res) => {
     const id = req.params.id;
     const data = req.body;
     const profilePic = req.file ? req.file.path : null; // Get local file path
-    console.log(profilePic);
+    console.log(profilePic, data.profilePicPublicId);
 
     let profilePicUrl = null;
     let profilePicPublicId = null;

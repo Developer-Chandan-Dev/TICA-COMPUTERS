@@ -49,6 +49,10 @@ const useUpdateStudentDetails = () => {
       formData.append("profilePic", profilePic);
     }
 
+    for (const [key, value] of formData.entries()) {
+      console.log(`${key}:`, value);
+    }
+
     try {
       const res = await fetch(`/api/v1/instructor/student/${id}`, {
         method: "PUT",
@@ -61,7 +65,7 @@ const useUpdateStudentDetails = () => {
         toast.success(data.message);
         toast.success("Form submitted successfully");
       } else {
-        toast.error(data.err);
+        toast.error(data.error);
       }
       setLoading(false);
       return data;

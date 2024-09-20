@@ -114,6 +114,7 @@ const DashboardNavbar = () => {
     menuRef: subMenuRef,
   } = useAnimatedMenu("x", 80, "x", 0, "x", 0, "x", 80);
 
+  console.log(authDashboardUser);
   return (
     <>
       <div

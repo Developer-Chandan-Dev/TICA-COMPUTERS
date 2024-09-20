@@ -106,10 +106,15 @@ const deleteRegisterCandidate = async (req, res) => {
   try {
     const id = req.params.id;
 
-    const candidate = await Admission.findById({ _id: id });
+    const candidate = await Register.findById({ _id: id });
+    console.log(candidate,'110');
     // Delete profilePic from cloudinary
-    if (candidate.profilePicPublicId) {
-      await deleteFromCloudinary(data.profilePicPublicId);
+    if (
+      candidate.profilePicPublicId &&
+      candidate.profilePicPublicId !== null &&
+      candidate.profilePicPublicId !== 'undefined'
+    ) {
+      await deleteFromCloudinary(candidate.profilePicPublicId);
     }
 
     await Register.findByIdAndDelete({ _id: id });
@@ -133,6 +138,7 @@ const updatedRegisteredCandidate = async (req, res) => {
 
     // Delete the old profile picture if a new one is provided
     if (data.profilePicPublicId && profilePic) {
+      console.log("Deleting old image with pulic ID:", data.profilePicPublicId)
       await deleteFromCloudinary(data.profilePicPublicId);
     }
 

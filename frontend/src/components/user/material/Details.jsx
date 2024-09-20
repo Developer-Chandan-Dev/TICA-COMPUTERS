@@ -4,14 +4,23 @@ import PropTypes from "prop-types";
 // import { indianDate } from "../../admin/Dashboard/indianDate";
 // import { formatDate } from "../../admin/Dashboard/instructor portal/dateUtils";
 
-const Details = ({
-  title,
-  desc,
-  author,
-  tag,
-  fileBanner,
-  fileUrl,
-}) => {
+const Details = ({ title, desc, author, tag, fileBanner, fileUrl }) => {
+  const downloadPdf = () => {
+    fetch(
+      "https://res.cloudinary.com/your-cloud-name/raw/upload/v1234567890/sample.pdf"
+    )
+      .then((response) => response.blob()) // Fetch PDF as blob
+      .then((blob) => {
+        const url = window.URL.createObjectURL(blob); // Create a URL for the Blob
+        const a = document.createElement("a"); // Create a temporary link element
+        a.href = url;
+        a.download = "sample.pdf"; // Set file name
+        document.body.appendChild(a); // Append the link to the body
+        a.click(); // Simulate click
+        a.remove(); // Remove link after download
+      });
+  };
+
   return (
     <div className="w-full px-3 py-5 sm:w-11/12 mx-auto flex justify-evenly items-center gap-5 flex-wrap backdrop-brightness-105 mb-10 relative">
       <span className="absolute left-5 top-5 text-xs font-medium text-[#7A7A7A] shadow-md drop-shadow px-2 py-1">
@@ -26,7 +35,7 @@ const Details = ({
           />
         </div>
         <div className="py-4">
-          <Link to={fileUrl} download={true}>
+          <a href={fileUrl} download={"sample.pdf"}>
             <button
               type="button"
               className="material_btn backdrop-blur-xl flex items-center justify-between"
@@ -45,7 +54,7 @@ const Details = ({
                 />
               </svg>
             </button>
-          </Link>
+          </a>
         </div>
       </div>
       <div className="w-[700px] h-auto pb-10 sm:pb-4 sm:h-80 px-6 py-4 ">

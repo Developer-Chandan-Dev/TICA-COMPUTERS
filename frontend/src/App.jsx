@@ -239,6 +239,7 @@ function App() {
               <Route path="" element={<CurrentAccounts />} />
               <Route path="edit/:accountId" element={<EditAccountDetails />} />
             </Route>
+
           </Route>
 
           {/* <--------------------- Instructor Portal ---------------------> */}

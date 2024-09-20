@@ -114,20 +114,24 @@ const updateStudent = async (req, res) => {
     const studentId = req.params.id;
     const data = req.body;
     const profilePic = req.file ? req.file.path : null; // Get local file path
-    console.log(profilePic, data, data.profilePicPublicId);
 
     let profilePicUrl = null;
     let profilePicPublicId = null;
 
-    // Checking what students is in database or not
+    // Fetch student details from the database to get the correct profilePicPublicId
     const student = await Admission.findById(studentId);
     if (!student) {
       return res.status(404).json({ error: "Student not found" });
     }
 
     // Delete the old profile picture if a new one is provided
-    if (data.profilePicPublicId && profilePic) {
-      await deleteFromCloudinary(data.profilePicPublicId);
+    // Use student.profilePicPublicId from database rather than req.body
+    if (student.profilePicPublicId && profilePic) {
+      console.log(
+        "Deleting old image with public ID:",
+        student.profilePicPublicId
+      );
+      await deleteFromCloudinary(student.profilePicPublicId); // Ensure this function works correctly
     }
 
     // Upload the new profile picture if provided
@@ -145,8 +149,10 @@ const updateStudent = async (req, res) => {
     const response = await Admission.findByIdAndUpdate(
       studentId,
       {
-        profilePic: profilePicUrl,
-        profilePicPublicId: profilePicPublicId,
+        profilePic: profilePicUrl ? profilePicUrl : student.profilePic, // Only update if a new profile pic was uploaded
+        profilePicPublicId: profilePicPublicId
+          ? profilePicPublicId
+          : student.profilePicPublicId, // Update only if a new image was uploaded
         ...data,
       },
       {
@@ -156,8 +162,9 @@ const updateStudent = async (req, res) => {
     );
 
     if (!response) {
-      return res.status(404).json({ error: "Course not found" });
+      return res.status(404).json({ error: "Student not found" });
     }
+
     res.status(200).json({ message: "Student Details updated Successfully" });
   } catch (error) {
     console.error(error);
@@ -173,7 +180,7 @@ const deleteStudent = async (req, res) => {
     const student = await Admission.findById({ _id: id });
     // Delete profilePic from cloudinary
     if (student.profilePicPublicId) {
-      await deleteFromCloudinary(data.profilePicPublicId);
+      await deleteFromCloudinary(student.profilePicPublicId);
     }
 
     await Admission.findByIdAndDelete({ _id: id });

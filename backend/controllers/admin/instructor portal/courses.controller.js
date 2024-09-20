@@ -24,6 +24,8 @@ const addCourse = async (req, res) => {
     } = req.body);
 
     const coursePic = req.file ? req.file.path : null; // Get local file path
+    console.log(data);
+    console.log(coursePic);
 
     // Check if the course with the same fullname and shortname already exists
     const existingCourse = await courseModelsByAdmin.findOne({
@@ -82,6 +84,10 @@ const updateCourse = async (req, res) => {
 
     // Delete the old profile picture if a new one is provided
     if (courseData.coursePicPublicId && coursePic) {
+      console.log(
+        "Deleting old image with public ID:",
+        courseData.coursePicPublicId
+      );
       await deleteFromCloudinary(courseData.coursePicPublicId);
     }
 

@@ -23,11 +23,24 @@ const uploadToCloudinary = async (filePath, folder, publicId) => {
 
 const deleteFromCloudinary = async (publicId) => {
   try {
-    console.log(publicId);
+    console.log("Deleting image with publicId:", publicId);
+
+    // Call Cloudinary's delete API
     const result = await cloudinary.uploader.destroy(publicId);
-    return result; // Cloudinary returns a result object, you can check it.
+
+    // Check Cloudinary's response
+    if (result.result === "ok") {
+      
+      console.log("Image successfully deleted from Cloudinary:", result);
+      return result;
+    } else {
+      console.error("Image not deleted from Cloudinary:", result);
+      throw new Error(
+        `Failed to delete image from Cloudinary. Response: ${result.result}`
+      );
+    }
   } catch (error) {
-    console.error("Error deleting file from cloudinary:", error);
+    console.error("Error deleting file from Cloudinary:", error);
     throw new Error(`Failed to delete image from Cloudinary: ${error.message}`);
   }
 };

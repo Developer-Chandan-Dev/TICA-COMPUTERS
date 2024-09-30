@@ -19,23 +19,19 @@ const SliderComponent = () => {
 
   const slides = [
     {
-      image: "../../assets/images/Slide-1.jpg",
       title: "Learning that gets you",
       description:
         "Skills for your present (and your future). Get started with us.",
     },
     {
-      image: "/src/assets/2.jpg",
       title: "Slide 2 Title",
       description: "Slide 2 Description Lorem ipsum dolor sit amet.",
     },
     {
-      image: "/src/assets/4.jpg",
       title: "Slide 3 Title",
       description: "Slide 3 Description Lorem ipsum dolor sit amet.",
     },
     {
-      image: "/src/assets/3.jpg",
       title: "Slide 4 Title",
       description: "Slide 4 Description Lorem ipsum dolor sit amet.",
     },
@@ -45,11 +41,7 @@ const SliderComponent = () => {
   return (
     <Slider {...settings}>
       {slides.map((slide, index) => (
-        <div
-          key={index}
-          className="slide w-full"
-          style={{ backgroundImage: `url(${slide.image})` }}
-        >
+        <div key={index} className={`slide w-full slide${index}`}>
           <div className="slide-content">
             <div className="slide-info">
               <h2 className="text-2xl md:text-3xl lg:text-4xl py-2">

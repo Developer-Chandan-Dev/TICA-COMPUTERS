@@ -36,7 +36,7 @@ MaterialBox.propTypes = {
   title: PropTypes.string.isRequired,
   desc: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
-  fileBanner: PropTypes.string.isRequired,
+  fileBanner: PropTypes.string,
 };
 
 // MaterialBox.defaultProps = {

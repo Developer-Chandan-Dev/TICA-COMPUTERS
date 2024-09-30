@@ -36,9 +36,22 @@
   height: 450px; /* Adjust as needed */
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   color: white;
   border: 1px solid whitesmoke;
+}
+.slide0 {
+  background: url("../assets/images/dashboard-banner.jpg");
+}
+.slide1 {
+  background-image: url("../assets/images/contact-banner.jpg");
+}
+.slide2 {
+  background-image: url("../assets/images/admin-banner.jpg");
+}
+.slide3 {
+  background-image: url("../assets/images/2.jpg");
 }
 
 .slide-content {

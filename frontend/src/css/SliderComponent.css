@@ -33,25 +33,28 @@
 
 .slide {
   width: 100%;
-  height: 450px; /* Adjust as needed */
+  height: 470px; /* Adjust as needed */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
   color: white;
-  border: 1px solid whitesmoke;
 }
 .slide0 {
-  background: url("../assets/images/dashboard-banner.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../assets/images/dashboard-banner.jpg");
 }
 .slide1 {
-  background-image: url("../assets/images/contact-banner.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../assets/images/course-complete.jpg");
 }
 .slide2 {
-  background-image: url("../assets/images/admin-banner.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../assets/images/students.jpg");
 }
 .slide3 {
-  background-image: url("../assets/images/2.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../assets/images/contact.jpg");
 }
 
 .slide-content {
@@ -108,4 +111,7 @@
   display: flex !important;
   justify-items: center;
   align-items: center;
+}
+
+.slide-content {
 }

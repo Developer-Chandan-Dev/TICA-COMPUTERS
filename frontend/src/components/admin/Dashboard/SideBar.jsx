@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setToggleSidebar } from "../../../features/admin/SidebarToggle/sidebarToggleSlice";
 import { useDashboardAuthContext } from "../../../context/DashboardAuthContext";
+import logo from "../../../../public/favicon.png";
 
 function SideBar() {
   const [shortSideBar2, setShortSideBar2] = useState("disable");
@@ -64,7 +65,13 @@ function SideBar() {
           >
             Dashboard
           </h1>
-          <div className="rounded-full w-8 h-8 bg-red-200 ml-[10px]"></div>
+          <div
+            className={`w-10 h-10 ml-2 ${
+              shortSideBar2 === "enable" ? "mx-auto" : ""
+            }  `}
+          >
+            <img src={logo} alt="logo" />
+          </div>
         </Link>
       </div>
       <ul

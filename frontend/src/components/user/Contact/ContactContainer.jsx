@@ -127,7 +127,7 @@ const ContactContainer = () => {
         </div>
       </div>
 
-      <div className="w-full h-60 sm:h-72 md:h-80 lg:h-96">
+      <div className="w-full h-72 sm:h-80 md:h-96 lg:h-[420px]">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d527.2787965562105!2d82.12699918398619!3d25.582023172111594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399aafb6b1f7ac83%3A0x3ab6eb9b62e29125!2sTICA%20Computer%20Center!5e0!3m2!1sen!2sin!4v1720582499808!5m2!1sen!2sin"
           className="w-full h-full"
@@ -139,7 +139,7 @@ const ContactContainer = () => {
       </div>
 
       <section className="w-full h-auto relative">
-        <div className="w-full contactBanner h-64 sm:h-72 md:h-80 lg:h-96"></div>
+        <div className="w-full contactBanner h-64 sm:h-72 md:h-80 lg:h-[450px]"></div>
         <ContactForm />
       </section>
     </section>

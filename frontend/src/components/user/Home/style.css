@@ -9,6 +9,55 @@
   letter-spacing: 2px;
 }
 
+.homeStudentsSection{
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../../assets/images/students.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.founderSection{
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../../assets/images/students.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.video-background{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.video-background video{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  object-fit: cover;
+}
+.video-background .overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);;
+  z-index: 2;
+}
+
+.video-background .content{
+  position: absolute;
+  z-index: 3;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  top: 50%;
+  left: 0%;
+  transform: translateY(-50%);
+}
+
 @media (max-width: 1296px) {
   .contentSection {
     width: 100% !important;

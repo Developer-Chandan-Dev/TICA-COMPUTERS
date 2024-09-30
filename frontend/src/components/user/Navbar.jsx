@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
 import useAnimatedMenu from "../../hooks/user/useAnimatedMenu";
 import useUpdateUser from "../../hooks/user/auth/useUpdateUser";
+import logo from "../../../public/favicon.png";
 
 function Navbar() {
   // <------- States -------->
@@ -56,7 +57,12 @@ function Navbar() {
       style={{ backgroundColor: "#104d6b" }}
     >
       <nav className="w-11/12 h-16 mx-auto flex items-center justify-between ">
-        <div className="text-white font-semibold text-base">TICA COMPUTERS</div>
+        <Link to="/">
+          <div className="text-white font-semibold text-base flex items-center gap-x-4">
+            <img src={logo} alt="logo" />
+            <span className="text-xl">TICA COMPUTERS</span>
+          </div>
+        </Link>
         {isHamburgerOpen && (
           <ul
             className={`navBar-navlist absolute w-36 -left-0 top-16 px-2 py-3 items-center opacity-0 -translate-x-20 z-10 md:hidden`}

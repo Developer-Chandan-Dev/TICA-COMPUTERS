@@ -9,7 +9,7 @@ const CourseContainer = () => {
 
   return (
     <section
-      className="w-full h-auto py-4 text-sm"
+      className="w-full h-auto pb-4 text-sm"
       style={{ background: "#f8f5ee99" }}
     >
       <Banner

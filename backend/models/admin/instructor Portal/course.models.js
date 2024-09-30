@@ -57,7 +57,7 @@ const courseSchema = new mongoose.Schema(
     language: {
       type: String,
       required: true,
-      enum: ["Hindi", "English"],
+      enum: ["Hindi", "English","Hindi & English"],
       default: "Hindi",
     },
     prerequisites: {

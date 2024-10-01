@@ -82,10 +82,10 @@ body {
   }
 
   .sm {
-    @apply font-medium text-sm px-5 py-2 rounded-full text-blue-800 border border-blue-800 bg-transparent transition-all hover:bg-blue-800 hover:text-white hover:drop-shadow-md hover:shadow;
+    @apply font-medium text-sm px-5 py-2 rounded-full text-[#104d6b] border border-[#104d6b] bg-transparent transition-all hover:bg-[#104d6b] hover:text-white hover:drop-shadow-md hover:shadow;
   }
   .btn-sm {
-    @apply font-medium text-sm px-5 py-2 rounded-full hover:text-slate-50 border border-blue-800 hover:bg-blue-900 transition-all bg-blue-800 text-white drop-shadow-md shadow;
+    @apply font-medium text-sm px-5 py-2 rounded-full hover:text-slate-50 border border-[#104d6b] hover:bg-[#083247] transition-all bg-[#104d6b] text-white drop-shadow-md shadow;
   }
   .back-btn {
     @apply font-medium text-sm px-3 py-1 rounded-full text-gray-800 border border-transparent hover:border-gray-800 bg-transparent transition-all hover:bg-gray-800 hover:text-white hover:drop-shadow-md hover:shadow;

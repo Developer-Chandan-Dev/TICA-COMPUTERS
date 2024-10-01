@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 /* eslint-disable react/prop-types */
 const WhatYouLearn = ({ whatYouLearn }) => {
   return (
@@ -29,7 +31,28 @@ const WhatYouLearn = ({ whatYouLearn }) => {
             : ""}
         </div>
       </div>
-      <div className="w-80 h-80 mt-6 border rounded drop-shadow sm:w-[300px]"></div>
+      <div>
+        <div className="w-80 h-80 mt-6 border rounded drop-shadow sm:w-[300px] flex-center flex-col ">
+          <h1 className="text-xl font-semibold">Duration and Fees</h1>
+          <div className="w-64 h-[6px] mt-3 bg-[#104d6b] rounded-lg"></div>
+          <ul className="w-11/12 flex-center flex-col gap-y-1 mt-3 mb-2">
+              <li className="flex w-11/12 items-center justify-between"><span>Duration</span> <span>: 1 Year</span> </li>
+              <li className="flex w-11/12 items-center justify-between"><span>Total Fees</span><span>: 5000</span> </li>
+              <li className="flex w-11/12 items-center justify-between"><span>Registration Fees</span> <span>: 1000</span> </li>
+          </ul>
+          <h2 className="text-lg font-semibold mt-3 mb-2">Our Plans</h2>
+          <ul className="w-11/12 flex-center flex-col gap-y-1 ">
+              <li className="flex w-11/12 items-center justify-between"><span>One Time Pay</span> <span>: 5500</span> </li>
+              <li className="flex w-11/12 items-center justify-between"><span>Two Time Pay</span><span>: 5700</span> </li>
+              <li className="flex w-11/12 items-center justify-between"><span>Monthly Pay</span> <span>: 400</span> </li>
+          </ul>
+        </div>
+        <Link to="/courses/register">
+          <div className="w-80 px-4 mt-4 h-10 sm:w-[300px] flex-center sm !rounded">
+            <span>Enroll Now</span>
+          </div>
+        </Link>
+      </div>
     </div>
   );
 };

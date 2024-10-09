@@ -18,6 +18,7 @@ const Course = ({
       stagger: 0.5,
     });
   }, []);
+
   return (
     <>
       <div
@@ -42,7 +43,7 @@ const Course = ({
                 style={{ background: "#ECF8FE" }}
               >
                 <Link
-                  to="/courses/register"
+                  to={`/courses/register/${courseShortName}`}
                   className="w-9 h-9 bg-cyan-300 rounded-full flex justify-center items-center"
                 >
                   <svg
@@ -81,7 +82,7 @@ const Course = ({
             >
               {duration}
             </button>
-            <Link to="/courses/register">
+            <Link to={`/courses/register/${courseShortName}`}>
               <button
                 className="px-2 py-1 mb-1 sm:mb-0 mr-1 sm:mr-0 text-xs transition-all text-white shadow-md shadow-slate-400 hover:shadow-slate-500 rounded  sm:bg-none cursor-pointer"
                 style={{ background: "#82a9bc" }}

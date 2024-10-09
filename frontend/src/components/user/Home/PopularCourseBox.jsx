@@ -33,7 +33,7 @@ const PopularCourseBox = ({
           style={{ left: "120px" }}
         >
           <Link
-            to="/courses/register"
+             to={`/courses/register/${courseShortName}`}
             className="w-9 h-9 bg-cyan-300 rounded-full flex justify-center items-center"
           >
             <svg
@@ -67,7 +67,7 @@ const PopularCourseBox = ({
       </div>
       <div className=" w-full h-12 flex items-center justify-around bg-yellow-300">
         <span className="text-sm cursor-pointer">{duration}</span>
-        <Link to="/courses/register">
+        <Link  to={`/courses/register/${courseShortName}`}>
           <span className="text-sm cursor-pointer">Register Now</span>
         </Link>
         <Link to={`/courses/details/${courseShortName}`}>

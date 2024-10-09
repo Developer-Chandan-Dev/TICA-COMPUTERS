@@ -152,7 +152,7 @@ const CourseInfo = ({
             <button className="px-2 py-1 mb-1 mr-1 sm:mr-0 text-xs bg-cyan-600 text-white shadow-md shadow-slate-400 hover:shadow-slate-500 rounded  sm:bg-none cursor-pointer">
               {duration}
             </button>
-            <Link to="/courses/register">
+            <Link to={`/courses/register/${courseShortName}`}>
               <button className="px-2 py-1 mb-1 mr-1 sm:mr-0 text-xs bg-cyan-600 text-white shadow-md shadow-slate-400 hover:shadow-slate-500 rounded  sm:bg-none cursor-pointer">
                 Register Now
               </button>

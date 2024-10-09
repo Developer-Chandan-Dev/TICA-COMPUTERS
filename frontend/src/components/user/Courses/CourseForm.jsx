@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import "./style.css";
 import useCourseForm from "../../../hooks/user/courses/useCourseForm";
+import { useParams } from "react-router-dom";
 // import GenderCheckbox from "./GenderCheckbox";
 
 const CourseForm = () => {
@@ -13,6 +14,7 @@ const CourseForm = () => {
     handleSubmit,
     handleReset,
     loading,
+    setFormValues,
   } = useCourseForm();
 
   const [courseNames, setCourseNames] = useState(null);
@@ -23,9 +25,21 @@ const CourseForm = () => {
         return value.json();
       })
       .then((response) => {
-        return setCourseNames(response);
+        setCourseNames(response);
       });
   }, []);
+
+  const { courseName } = useParams();
+
+  useEffect(() => {
+    if (courseNames !== null) {
+      courseNames.forEach((course) => {
+        if (course.courseShortName === courseName) {
+          setFormValues({ ...formValues, courseName: courseName });
+        }
+      });
+    }
+  }, [courseName, courseNames]);
 
   return (
     <form onSubmit={handleSubmit} className="text-sm admissionForm">

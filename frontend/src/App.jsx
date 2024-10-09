@@ -127,6 +127,10 @@ function App() {
           element={authUser ? <CourseRegisterPage /> : <Navigate to="/" />}
         />
         <Route
+          path="/courses/register/:courseName"
+          element={authUser ? <CourseRegisterPage /> : <Navigate to="/" />}
+        />
+        <Route
           path="courses/details/:courseName"
           element={authUser ? <CourseDetailsPage /> : <Navigate to="/" />}
         />

@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
-const WhatYouLearn = ({ whatYouLearn }) => {
+const WhatYouLearn = ({ whatYouLearn, fees, duration,courseShortName }) => {
   return (
     <div className="w-full pt-6 sm:w-11/12 flex justify-between flex-wrap-reverse gap-x-4 gap-y-4 mx-auto">
       <div className="pt-6 border px-6 pb-4 mr-10 whatYouLearn w-[60%] my-10">
         <h2 className="text-xl py-2 pl-1 font-semibold text-gray-500">
-          What you'll learn
+          What you&apos;ll learn
         </h2>
 
         <div className="flex items-center flex-wrap w-full">
@@ -36,18 +36,18 @@ const WhatYouLearn = ({ whatYouLearn }) => {
           <h1 className="text-xl font-semibold">Duration and Fees</h1>
           <div className="w-64 h-[6px] mt-3 bg-[#104d6b] rounded-lg"></div>
           <ul className="w-11/12 flex-center flex-col gap-y-1 mt-3 mb-2">
-              <li className="flex w-11/12 items-center justify-between"><span>Duration</span> <span>: 1 Year</span> </li>
-              <li className="flex w-11/12 items-center justify-between"><span>Total Fees</span><span>: 5000</span> </li>
+              <li className="flex w-11/12 items-center justify-between"><span>Duration</span> <span>: {duration}</span> </li>
+              <li className="flex w-11/12 items-center justify-between"><span>Total Fees</span><span>: {fees - 1000}</span> </li>
               <li className="flex w-11/12 items-center justify-between"><span>Registration Fees</span> <span>: 1000</span> </li>
           </ul>
           <h2 className="text-lg font-semibold mt-3 mb-2">Our Plans</h2>
           <ul className="w-11/12 flex-center flex-col gap-y-1 ">
-              <li className="flex w-11/12 items-center justify-between"><span>One Time Pay</span> <span>: 5500</span> </li>
-              <li className="flex w-11/12 items-center justify-between"><span>Two Time Pay</span><span>: 5700</span> </li>
+              <li className="flex w-11/12 items-center justify-between"><span>One Time Pay</span> <span>: {fees - 500}</span> </li>
+              <li className="flex w-11/12 items-center justify-between"><span>Two Time Pay</span><span>: {fees - 300}</span> </li>
               <li className="flex w-11/12 items-center justify-between"><span>Monthly Pay</span> <span>: 400</span> </li>
           </ul>
         </div>
-        <Link to="/courses/register">
+        <Link to={`/courses/register/${courseShortName}`}>
           <div className="w-80 px-4 mt-4 h-10 sm:w-[300px] flex-center sm !rounded">
             <span>Enroll Now</span>
           </div>

@@ -183,7 +183,7 @@ const Footer = () => {
             <li className="text-sm mr-4 mb-2">Policy</li>
           </ul>
           <div>
-            <span className="text-sm">Hello everyone</span>
+            <Link to="/dashboard"><span className="text-sm">Admin Panel</span></Link>
           </div>
         </div>
       </div>

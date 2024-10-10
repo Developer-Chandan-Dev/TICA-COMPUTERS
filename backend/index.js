@@ -7,8 +7,13 @@ const bodyParser = require("body-parser");
 
 // Use cookie-parser middleware
 app.use(cookieParser());
-app.use(cors());
-app.use(cors({ origin: "http://localhost:5000" }));
+app.use(
+  cors({
+    origin: ["http://localhost:5000", "https://tica-computers.netlify.app"],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

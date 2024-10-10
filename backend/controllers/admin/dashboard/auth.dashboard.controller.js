@@ -5,7 +5,6 @@ const generateTokenAndSetCookie = require("../../../utils/generateTokenForDashbo
 const dashboardLogin = async (req, res) => {
   try {
     const { username, password, role } = req.body;
-    console.log(username, password, role);
     const user = await DashboardUsers.findOne({ username, role });
     const comparePassword = await bcryptjs.compare(
       password,
@@ -15,7 +14,6 @@ const dashboardLogin = async (req, res) => {
     if (!user || !comparePassword) {
       return res.status(400).json({ message: "Invalid credentials" });
     }
-    console.log(user);
     // generate Token
     generateTokenAndSetCookie(user._id, res);
     res.status(200).json({

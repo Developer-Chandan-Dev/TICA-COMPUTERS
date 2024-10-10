@@ -27,11 +27,9 @@ const DashboardContainer = () => {
               in Dashboard. You can access{" "}
               {authDashboardUser.role === "admin"
                 ? "all the routes"
-                : authDashboardUser.role === "instructor" ??
-                  authDashboardUser.role === "instructor"
+                : authDashboardUser.role === "instructor"
                 ? "all routes but not admin routes"
-                : "instructor routes but can not change anything. You have not permission for change or delete anything"}
-              .
+                : "instructor routes but cannot change anything. You do not have permission to change or delete anything"}
             </p>
           </div>
         </div>

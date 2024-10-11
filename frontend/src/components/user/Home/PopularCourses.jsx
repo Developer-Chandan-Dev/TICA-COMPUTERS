@@ -4,9 +4,12 @@ import Spinner from "../../utility/Spinner";
 import useFetchData from "../../../hooks/utils/useFetchData";
 
 const PopularCourses = () => {
-  const { data, error, loading } = useFetchData(
-    "/api/v1/instructor/course/home/data"
-  );
+  const {
+    data = [],
+    error,
+    loading,
+  } = useFetchData("/api/v1/instructor/course/home/data");
+  console.log(data);
 
   return (
     <>
@@ -18,7 +21,7 @@ const PopularCourses = () => {
         <div className="items-center flex flex-wrap my-10 gap-4 px-3 popularCourses mx-auto text-center">
           {loading && <Spinner />}
           {error && <p className="text-red-600">{error}</p>}
-          {data != null ? (
+          {Array.isArray(data) && data.length > 0 && data !== null ? (
             data.map((data, index) => (
               <PopularCourseBox
                 key={index}

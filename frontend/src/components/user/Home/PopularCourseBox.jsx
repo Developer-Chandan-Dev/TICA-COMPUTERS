@@ -53,7 +53,7 @@ const PopularCourseBox = ({
           {courseFullName}
         </h2>
         <div className="flex items-center justify-center w-full flex-wrap px-2 pt-2 pb-4 gap-x-2 gap-y-1 mx-auto">
-          {mainTopics != null
+          {!mainTopics && mainTopics != null
             ? mainTopics.map((topic, index) => (
                 <button
                   key={index}

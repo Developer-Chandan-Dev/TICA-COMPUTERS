@@ -4,9 +4,11 @@ import Spinner from "../../utility/Spinner";
 import useFetchData from "../../../hooks/utils/useFetchData";
 
 const MaterialsSection = () => {
-  const { data, error, loading } = useFetchData(
-    "/api/v1/instructor/materials/home/data"
-  );
+  const {
+    data = [],
+    error,
+    loading,
+  } = useFetchData("/api/v1/instructor/materials/home/data");
 
   console.log(data);
 
@@ -22,7 +24,7 @@ const MaterialsSection = () => {
         <div className=" flex items-center flex-wrap gap-6 mt-10 mb-5 py-5 mx-auto px-3">
           {loading && <Spinner />}
           {error && <p className="text-red-500">{error}</p>}
-          {data != null  ? (
+          {Array.isArray(data) && data.length > 0 && data !== null ? (
             data.map((data, index) => (
               <MaterialBox
                 key={index}

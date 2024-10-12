@@ -9,6 +9,8 @@ import { formatDateToHTML } from "../../formateDateToHTML";
 import useHandleInstructorAndStaffForm from "../../../../../hooks/admin/admin portal/useHandleInstructorAndStaffForm";
 
 const UpdateInstructorForm = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
+
   const {
     formData,
     handleChange,
@@ -61,7 +63,7 @@ const UpdateInstructorForm = () => {
   useEffect(() => {
     const instructorData = async () => {
       const response = await axios.get(
-        `/api/v1/admin/instructor/${instructorId}`
+        `${VITE_API_URL}/api/v1/admin/instructor/${instructorId}`
       );
       const data = response.data;
 
@@ -76,7 +78,7 @@ const UpdateInstructorForm = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    const data = await handleSubmit(`/api/v1/admin/instructor/${instructorId}`);
+    const data = await handleSubmit(`${VITE_API_URL}/api/v1/admin/instructor/${instructorId}`);
     if (data) {
       toast.success(data.message);
       // Handle success (e.g., rest form, show success message)

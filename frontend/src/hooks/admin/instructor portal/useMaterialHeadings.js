@@ -13,6 +13,7 @@ import {
 //
 
 const useMaterialHeadings = (initialUrl) => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [headings, setHeadings] = useState([]);
   const [checkedIds, setCheckedIds] = useState([]);
 
@@ -66,7 +67,7 @@ const useMaterialHeadings = (initialUrl) => {
 
     try {
       await axios.put(
-        `/api/v1/instructor/materials-heading/${updatedHeading._id}`,
+        `${VITE_API_URL}/api/v1/instructor/materials-heading/${updatedHeading._id}`,
         {
           name: updatedHeading.name,
         }
@@ -105,7 +106,7 @@ const useMaterialHeadings = (initialUrl) => {
       }).then((result) => {
         if (result.isConfirmed) {
           axios
-            .delete(`/api/v1/instructor/materials-heading/${headingId}`)
+            .delete(`${VITE_API_URL}/api/v1/instructor/materials-heading/${headingId}`)
             .then(() => {
               setHeadings(headings.filter((_, i) => i !== index));
               console.log(headingId);

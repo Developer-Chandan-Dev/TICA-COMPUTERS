@@ -12,6 +12,8 @@ const MaterialBox = ({
   data,
   setData,
 }) => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
+
   return (
     <div className=" w-[19rem] h-64 rounded-lg bg-[#F7F8F8] drop-shadow shadow-lg relative">
       <div className="absolute right-2 top-2 w-14 h-5 bg-white drop-shadow-sm flex-center">
@@ -39,7 +41,7 @@ const MaterialBox = ({
             onClick={() =>
               onDelete(
                 id,
-                "/api/v1/instructor/materials",
+                `${VITE_API_URL}/api/v1/instructor/materials`,
                 setData,
                 data,
                 "material"

@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 
 const useCourseForm = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [loading, setLoading] = useState(false);
   const [formValues, setFormValues] = useState({
     courseName: "",
@@ -121,7 +122,7 @@ const useCourseForm = () => {
 
     try {
       const response = await axios.post(
-        "/api/v1/user/registration/new",
+        `${VITE_API_URL}/api/v1/user/registration/new`,
         formData,
         {
           headers: {

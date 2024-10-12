@@ -4,6 +4,8 @@ import gsap from "gsap";
 import useFetchData from "../../../../hooks/utils/useFetchData";
 
 const AdminCards = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
+
   useGSAP(() => {
     gsap.to(".card", {
       opacity: 1,
@@ -12,7 +14,7 @@ const AdminCards = () => {
     });
   }, []);
 
-  const { data } = useFetchData("/api/v1/admin/panel/card-data");
+  const { data } = useFetchData(`${VITE_API_URL}/api/v1/admin/panel/card-data`);
 
   return (
     <>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 
 const useMaterialForm = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [loading, setLoading] = useState(false);
 
   const materialForm = async ({
@@ -40,7 +41,7 @@ const useMaterialForm = () => {
     }
 
     try {
-      const res = await fetch(`/api/v1/instructor/materials/${type}/add/`, {
+      const res = await fetch(`${VITE_API_URL}/api/v1/instructor/materials/${type}/add/`, {
         method: "POST",
         body: formData,
       });

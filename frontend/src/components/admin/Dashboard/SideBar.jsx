@@ -11,6 +11,7 @@ function SideBar() {
 
   const location = useLocation();
   const dispatch = useDispatch();
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
 
   const { authDashboardUser, setAuthDashboardUser } = useDashboardAuthContext();
 
@@ -30,7 +31,7 @@ function SideBar() {
   // <-------------- Handle Logout -------------->
   const handleLogout = async () => {
     // Send request to backend to clear cookies
-    await fetch("/api/v1/admin/dashboard/logout", {
+    await fetch(`${VITE_API_URL}/api/v1/admin/dashboard/logout`, {
       method: "POST",
       credentials: "include", // This ensures cookies are sent with the request
     });

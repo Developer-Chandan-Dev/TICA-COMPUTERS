@@ -2,6 +2,7 @@ import { toast } from "react-toastify";
 import { useState } from "react";
 
 const useAddCourseForm = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [loading, setLoading] = useState(false);
 
   const addCourseForm = async ({
@@ -43,7 +44,7 @@ const useAddCourseForm = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/v1/instructor/course/add", {
+      const res = await fetch(`${VITE_API_URL}/api/v1/instructor/course/add`, {
         method: "POST",
         headers: { "Content-Type": "multipart/form-data" },
         body: JSON.stringify({

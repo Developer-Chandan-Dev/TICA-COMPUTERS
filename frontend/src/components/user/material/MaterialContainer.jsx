@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import Spinner from "../../utility/Spinner";
 
 const MaterialContainer = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -12,7 +13,7 @@ const MaterialContainer = () => {
   const id = useParams();
   useEffect(() => {
     setLoading(true);
-    const allMaterialsData = fetch(`/api/v1/instructor/materials`);
+    const allMaterialsData = fetch(`${VITE_API_URL}/api/v1/instructor/materials`);
     allMaterialsData
       .then((value) => {
         return value.json();

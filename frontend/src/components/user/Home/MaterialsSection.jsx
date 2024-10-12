@@ -4,11 +4,12 @@ import Spinner from "../../utility/Spinner";
 import useFetchData from "../../../hooks/utils/useFetchData";
 
 const MaterialsSection = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const {
     data = [],
     error,
     loading,
-  } = useFetchData("/api/v1/instructor/materials/home/data");
+  } = useFetchData(`${VITE_API_URL}/api/v1/instructor/materials/home/data`);
 
   console.log(data);
 

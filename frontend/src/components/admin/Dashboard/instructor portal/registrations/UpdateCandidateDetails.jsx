@@ -6,6 +6,7 @@ import { formatDateToHTML } from "../../formateDateToHTML";
 import { Link } from "react-router-dom";
 
 const UpdateCandidateDetails = ({ candidateId }) => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [inputs, setInputs] = useState({
     id: "",
     courseName: "",
@@ -28,7 +29,7 @@ const UpdateCandidateDetails = ({ candidateId }) => {
   const { candidateDetailsForm, loading } = useUpdateCandidateDetails();
   
   useEffect(() => {
-    const courseDetails = fetch(`/api/v1/user/course/`);
+    const courseDetails = fetch(`${VITE_API_URL}/api/v1/user/course/`);
     courseDetails
       .then((value) => {
         return value.json();
@@ -41,7 +42,7 @@ const UpdateCandidateDetails = ({ candidateId }) => {
 
   useEffect(() => {
     const courseDetails = fetch(
-      `/api/v1/instructor/registered-candidates/${candidateId}`
+      `${VITE_API_URL}/api/v1/instructor/registered-candidates/${candidateId}`
     );
     courseDetails
       .then((value) => {

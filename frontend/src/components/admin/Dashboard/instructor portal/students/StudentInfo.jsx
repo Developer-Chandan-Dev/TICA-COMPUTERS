@@ -20,6 +20,7 @@ const StudentInfo = ({
   setData,
   data,
 }) => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const { authDashboardUser } = useDashboardAuthContext();
 
   return (
@@ -72,7 +73,7 @@ const StudentInfo = ({
                 authDashboardUser.role === "instructor"
                   ? onDelete(
                       id,
-                      "/api/v1/instructor/student",
+                      `${VITE_API_URL}/api/v1/instructor/student`,
                       setData,
                       data,
                       "Student"

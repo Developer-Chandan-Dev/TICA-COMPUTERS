@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 import useHandleDeletewithSweetAlert from "../../../../../hooks/admin/instructor portal/useHandleDeletewithSweetAlert";
 
 const RegisterCandidate = ({ searchTerm, currentPage, setTotalPages }) => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [candidates, setCandidates] = useState(null);
   const [checkedIds, setCheckedIds] = useState([]);
   const [itemsPerPage] = useState(7); // Define items per page
@@ -19,7 +20,7 @@ const RegisterCandidate = ({ searchTerm, currentPage, setTotalPages }) => {
     const fetchCandidates = async () => {
       try {
         const response = await axios.get(
-          "/api/v1/instructor/registered-candidates",
+          `${VITE_API_URL}/api/v1/instructor/registered-candidates`,
           {
             params: {
               page: currentPage,
@@ -62,8 +63,8 @@ const RegisterCandidate = ({ searchTerm, currentPage, setTotalPages }) => {
 
   // Handle checkbox change and update state and local storage
   const handleApprove = async (objectId) => {
-    await axios.post(`/api/v1/instructor/student/${objectId}`); // adding data in Student collections
-    await axios.put(`/api/v1/instructor/registered-candidates/${objectId}`, {
+    await axios.post(`${VITE_API_URL}/api/v1/instructor/student/${objectId}`); // adding data in Student collections
+    await axios.put(`${VITE_API_URL}/api/v1/instructor/registered-candidates/${objectId}`, {
       status: "Cleared",
     });
     if (!checkedIds.includes(objectId)) {

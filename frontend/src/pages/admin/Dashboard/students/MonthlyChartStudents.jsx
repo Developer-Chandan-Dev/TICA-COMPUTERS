@@ -23,6 +23,7 @@ ChartJS.register(
 );
 
 const MonthlyChartStudents = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [filteredCounts, setFilteredCounts] = useState([]); // State for filtered counts
 
   const monthNames = [
@@ -44,7 +45,7 @@ const MonthlyChartStudents = () => {
     const fetchMontlyData = async () => {
       try {
         const response = await axios.get(
-          "/api/v1/instructor/student/admission/monthly"
+          `${VITE_API_URL}/api/v1/instructor/student/admission/monthly`
         );
         const data = response.data;
 

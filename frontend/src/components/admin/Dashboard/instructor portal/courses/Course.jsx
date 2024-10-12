@@ -9,6 +9,7 @@ import Spinner from "../../../../utility/Spinner";
 import useHandleDeletewithSweetAlert from "../../../../../hooks/admin/instructor portal/useHandleDeletewithSweetAlert";
 
 const Course = ({ searchTerm }) => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -19,7 +20,7 @@ const Course = ({ searchTerm }) => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get("/api/v1/instructor/course/", {
+        const response = await axios.get(`${VITE_API_URL}/api/v1/instructor/course/`, {
           params: {
             search: searchTerm,
           },
@@ -53,7 +54,7 @@ const Course = ({ searchTerm }) => {
     // Set Course on Home page
     setLoading(true);
     try {
-      const res = await fetch(`/api/v1/instructor/course/home-data/${objectId}`, {
+      const res = await fetch(`${VITE_API_URL}/api/v1/instructor/course/home-data/${objectId}`, {
         method: "PUT",
         headers: { "Content-Type": "Application/json" },
         body: JSON.stringify({
@@ -103,7 +104,7 @@ const Course = ({ searchTerm }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`/api/v1/instructor/course/${id}`)
+          .delete(`${VITE_API_URL}/api/v1/instructor/course/${id}`)
           .then(() => {
             setData(data.filter((item) => item._id !== id));
 

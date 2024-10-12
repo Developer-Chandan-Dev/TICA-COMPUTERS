@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 // import GenderCheckbox from "./GenderCheckbox";
 
 const CourseForm = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const {
     formValues,
     errors,
@@ -19,7 +20,7 @@ const CourseForm = () => {
 
   const [courseNames, setCourseNames] = useState(null);
   useEffect(() => {
-    const courseDetails = fetch(`/api/v1/user/course/`);
+    const courseDetails = fetch(`${VITE_API_URL}/api/v1/user/course/`);
     courseDetails
       .then((value) => {
         return value.json();

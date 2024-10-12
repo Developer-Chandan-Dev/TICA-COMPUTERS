@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import useHandleInstructorAndStaffForm from "../../../../../hooks/admin/admin portal/useHandleInstructorAndStaffForm";
 
 const StaffForm = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const {
     formData,
     handleChange,
@@ -53,7 +54,7 @@ const StaffForm = () => {
   console.log(formData);
   const onSubmit = async (e) => {
     e.preventDefault();
-    const data = await handleSubmit("/api/v1/admin/staff/add");
+    const data = await handleSubmit(`${VITE_API_URL}/api/v1/admin/staff/add`);
     if (data) {
       console.log("Staff added:", data);
       toast.success(data.message);

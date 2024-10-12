@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import useUpdateStudentDetails from "../../../../../hooks/admin/instructor portal/useUpdateStudentDetails";
 
 const UpdateStudentDetails = ({ studentId }) => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [inputs, setInputs] = useState({
     id: "",
     courseName: "",
@@ -30,7 +31,7 @@ const UpdateStudentDetails = ({ studentId }) => {
   const { studentDetailsForm, loading } = useUpdateStudentDetails();
 
   useEffect(() => {
-    const courseDetails = fetch(`/api/v1/user/course/`);
+    const courseDetails = fetch(`${VITE_API_URL}/api/v1/user/course/`);
     courseDetails
       .then((value) => {
         return value.json();
@@ -45,7 +46,7 @@ const UpdateStudentDetails = ({ studentId }) => {
   
 
   useEffect(() => {
-    const studentDetails = fetch(`/api/v1/instructor/student/${studentId}`);
+    const studentDetails = fetch(`${VITE_API_URL}/api/v1/instructor/student/${studentId}`);
     studentDetails
       .then((value) => {
         return value.json();

@@ -4,8 +4,9 @@ import useHandleDeletewithSweetAlert from "../../../../../hooks/admin/instructor
 import useFetchData from "../../../../../hooks/utils/useFetchData";
 
 const Enquiry = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const { data, setData, error, loading } = useFetchData(
-    "/api/v1/instructor/enquiry"
+    `${VITE_API_URL}/api/v1/instructor/enquiry`
   );
 
   const { handleDelete } = useHandleDeletewithSweetAlert();

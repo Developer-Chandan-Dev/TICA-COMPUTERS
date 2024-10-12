@@ -7,6 +7,7 @@ import axios from "axios";
 import useFetchData from "../../../hooks/utils/useFetchData";
 
 const AboutContainer = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   useGSAP(() => {
     gsap.to(".aboutSite div", {
       opacity: 1,
@@ -39,7 +40,7 @@ const AboutContainer = () => {
   //   }
   // }, []);
 
-  const { data, error, loading } = useFetchData("/api/v1/user/about-data");
+  const { data, error, loading } = useFetchData(`${VITE_API_URL}/api/v1/user/about-data`);
 
   console.log(data);
   // console.log(data.totalCourses);

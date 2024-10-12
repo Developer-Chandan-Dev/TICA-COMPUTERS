@@ -6,7 +6,8 @@ import useHandleDeletewithSweetAlert from "../../../../../hooks/admin/instructor
 import Spinner from "../../../../utility/Spinner";
 
 const ShowInstructors = () => {
-  const { data, loading, error, setData } = useFetchData("/api/v1/admin/instructor/");
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
+  const { data, loading, error, setData } = useFetchData(`${VITE_API_URL}/api/v1/admin/instructor/`);
   const { handleDelete } = useHandleDeletewithSweetAlert();
 
   return (

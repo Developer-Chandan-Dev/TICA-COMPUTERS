@@ -4,11 +4,12 @@ import Staff from "./Staff";
 import StaffDetailsInfo from "./StaffDetailsInfo";
 
 const StaffDetails = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const { staffId } = useParams();
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    const staffData = fetch(`/api/v1/admin/staff/${staffId}`);
+    const staffData = fetch(`${VITE_API_URL}/api/v1/admin/staff/${staffId}`);
     staffData
       .then((value) => {
         return value.json();

@@ -57,7 +57,7 @@
     url("../assets/images/contact.jpg");
 }
 
-.slide-content {
+/* .slide-content {
   position: absolute;
   left: 70px;
   top: 70px;
@@ -67,7 +67,7 @@
   box-shadow: 0 0 5px gray;
   width: 450px;
   font-family: Cambria;
-}
+} */
 
 .slide-info {
   text-align: left;

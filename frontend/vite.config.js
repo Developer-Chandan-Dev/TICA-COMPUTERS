@@ -8,6 +8,7 @@ export default defineConfig({
     port: 5000,
     proxy: {
       "/api": {
+        // target: "http://localhost:3000", // Render backend URL
         target: "https://tica-computers-backend.onrender.com", // Render backend URL
         changeOrigin: true,
         secure: true,

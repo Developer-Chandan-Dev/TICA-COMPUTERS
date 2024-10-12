@@ -25,6 +25,7 @@ ChartJS.register(
 );
 // endpoint :  /api/v1/admin/present-users/data/chart-data
 const Chart = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [filteredCounts, setFilteredCounts] = useState([]); // State for filtered counts
   const monthNames = [
     "Jan",
@@ -45,7 +46,7 @@ const Chart = () => {
     const fetchMontlyData = async () => {
       try {
         const response = await axios.get(
-          "/api/v1/admin/present-users/data/chart-data"
+          `${VITE_API_URL}/api/v1/admin/present-users/data/chart-data`
         );
         const data = response.data;
 

@@ -41,6 +41,7 @@ const formatLabel = (month, year, week) => {
 };
 
 const WeeklyChartStudents = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   // State to hold chart date and current month/year
   const [chartData, setChartData] = useState({});
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth() + 1);
@@ -52,7 +53,7 @@ const WeeklyChartStudents = () => {
       try {
         // Make an API call to fetch data
         const response = await axios.get(
-          "/api/v1/instructor/student/admission/current-month-weeks",
+          `${VITE_API_URL}/api/v1/instructor/student/admission/current-month-weeks`,
           {
             params: { month: currentMonth, year: currentYear },
           }

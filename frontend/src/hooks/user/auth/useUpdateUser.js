@@ -5,6 +5,8 @@ import { useAuthContext } from "../../../context/AuthContext";
 import { useDashboardAuthContext } from "../../../context/DashboardAuthContext";
 
 const useUpdateUser = (initialState) => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
+  console.log(VITE_API_URL)
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState(initialState);
 
@@ -39,7 +41,7 @@ const useUpdateUser = (initialState) => {
     setLoading(true);
     try {
       const res = await axios.put(
-        `/api/v1/profile/${formData._id}`,
+        `${VITE_API_URL}/api/v1/profile/${formData._id}`,
         formDataToSend,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -85,7 +87,7 @@ const useUpdateUser = (initialState) => {
   // <--------- Handle Logout ---------->
   const handleLogout = async () => {
     // Send request to backend to clear cookies
-    await fetch("/logout", {
+    await fetch(`${VITE_API_URL}/api/v1/auth/logout`, {
       method: "POST",
       credentials: "include", // This ensures cookies are sent with the request
     });

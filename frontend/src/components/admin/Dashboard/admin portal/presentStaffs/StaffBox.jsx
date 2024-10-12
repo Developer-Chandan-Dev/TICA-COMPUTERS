@@ -11,6 +11,7 @@ const StaffBox = ({
   data,
   setData,
 }) => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   return (
     <>
       <div className="instructor-card py-2 px-4 bg-white shadow-lg shadow-gray-400 rounded-xl cursor-default relative">
@@ -22,7 +23,7 @@ const StaffBox = ({
             fill="#25bbc3"
             className="bi bi-trash3 cursor-pointer de-icon"
             onClick={() =>
-              onDelete(id, "/api/v1/admin/staff", setData, data, "staff")
+              onDelete(id, `${VITE_API_URL}/api/v1/admin/staff`, setData, data, "staff")
             }
             viewBox="0 0 16 16"
           >

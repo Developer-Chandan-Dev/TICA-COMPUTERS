@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 
 const useEnquiryForm = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [loading, setLoading] = useState(false);
 
   const enquiryForm = async ({
@@ -24,7 +25,7 @@ const useEnquiryForm = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/v1/user/enquiry", {
+      const res = await fetch(`${VITE_API_URL}/api/v1/user/enquiry`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, phone, address, message, userPic }),

@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { useDashboardAuthContext } from "../../../context/DashboardAuthContext";
 
 const useDashboardLogin = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -16,7 +17,7 @@ const useDashboardLogin = () => {
     setError(null);
 
     try {
-      const res = await fetch("/api/v1/admin/dashboard/login", {
+      const res = await fetch(`${VITE_API_URL}/api/v1/admin/dashboard/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

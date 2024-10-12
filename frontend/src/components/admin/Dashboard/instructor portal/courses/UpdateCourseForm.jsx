@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import Spinner from "../../../../utility/Spinner";
 
 const UpdateCourseForm = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [instructors, setInstructors] = useState(null);
 
   const {
@@ -64,7 +65,7 @@ const UpdateCourseForm = () => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `/api/v1/instructor/course/${courseShortName}`
+          `${VITE_API_URL}/api/v1/instructor/course/${courseShortName}`
         );
         const courseData = response.data; // Set course data to the formData state
 
@@ -80,7 +81,7 @@ const UpdateCourseForm = () => {
 
   // <----------- Fetching Instructor Data ----------->
   useEffect(() => {
-    const instructorData = fetch("/api/v1/admin/instructor/");
+    const instructorData = fetch(`${VITE_API_URL}/api/v1/admin/instructor/`);
     instructorData
       .then((value) => {
         return value.json();
@@ -96,7 +97,7 @@ const UpdateCourseForm = () => {
   console.log(formData);
   const onSubmit = async (e) => {
     e.preventDefault();
-    const data = await handleSubmit(`/api/v1/instructor/course/${formData._id}`);
+    const data = await handleSubmit(`${VITE_API_URL}/api/v1/instructor/course/${formData._id}`);
     if (data.message == "Course updated Successfully") {
       toast.success(data.message);
       navigate("/dashboard/instructor/features/courses");

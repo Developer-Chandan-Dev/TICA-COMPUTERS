@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import useHandleDeletewithSweetAlert from "../../../../../hooks/admin/instructor portal/useHandleDeletewithSweetAlert";
 
 const User = ({ currentPage, setTotalPages, searchTerm }) => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [data, setData] = useState([]);
   const [blockedIds, setBlockedIds] = useState([]);
   const [itemsPerPage] = useState(7); // Define items per page
@@ -18,7 +19,7 @@ const User = ({ currentPage, setTotalPages, searchTerm }) => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("/api/v1/admin/present-users", {
+        const response = await axios.get(`${VITE_API_URL}/api/v1/admin/present-users`, {
           params: {
             page: currentPage,
             limit: itemsPerPage,
@@ -50,7 +51,7 @@ const User = ({ currentPage, setTotalPages, searchTerm }) => {
   // Block and unblock user
   const handleBlockUser = async (id, blocked) => {
     try {
-      const res = await fetch(`/api/v1/admin/present-users/block/${id}`, {
+      const res = await fetch(`${VITE_API_URL}/api/v1/admin/present-users/block/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "Application/json" },
         body: JSON.stringify({

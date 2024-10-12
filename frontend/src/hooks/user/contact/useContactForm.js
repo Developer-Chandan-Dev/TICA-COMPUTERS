@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 
 const useContactForm = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [loading, setLoading] = useState(false);
 
   const contactform = async ({
@@ -25,7 +26,7 @@ const useContactForm = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/v1/admin/contact/add", {
+      const res = await fetch(`${VITE_API_URL}/api/v1/admin/contact/add`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

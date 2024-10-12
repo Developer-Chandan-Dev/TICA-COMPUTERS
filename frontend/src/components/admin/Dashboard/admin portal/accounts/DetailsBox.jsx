@@ -13,6 +13,8 @@ const DetailsBox = ({
   setData,
   onDelete,
 }) => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
+
   return (
     <>
       <div className="w-72 bg-white p-2 border rounded-md drop-shadow flex gap-x-3 transition-all cursor-pointer hover:drop-shadow-lg hover:-translate-y-1">
@@ -61,7 +63,7 @@ const DetailsBox = ({
               onClick={() =>
                 onDelete(
                   id,
-                  "/api/v1/admin/accounts",
+                  `${VITE_API_URL}/api/v1/admin/accounts`,
                   setData,
                   data,
                   "dashboard user"

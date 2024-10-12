@@ -6,9 +6,10 @@ import useFetchDataUsingId from "../../../../../hooks/utils/useFetchDataUsingId"
 import Spinner from "../../../../utility/Spinner";
 
 const ShowMaterials = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const { materialHeadingId } = useParams();
   const { data, error, loading, setData } = useFetchDataUsingId(
-    "/api/v1/instructor/materials/all",
+    `${VITE_API_URL}/api/v1/instructor/materials/all`,
     materialHeadingId
   );
 

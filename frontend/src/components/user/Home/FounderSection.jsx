@@ -1,4 +1,5 @@
 import video from "../../../assets/videos/1.mp4";
+import img from "../../../assets/consultant.png";
 
 const FounderSection = () => {
   return (
@@ -11,7 +12,7 @@ const FounderSection = () => {
         <div className="content py-3">
           <div className=" md:w-3/4 lg:w-1/2 mx-auto">
             <div className="w-32 h-32 rounded-full mb-5 mx-auto">
-              <img src="/src/assets/consultant.png" alt="" />
+              <img src={img} alt="Founder" />
             </div>
             <h1 className="text-3xl mt-5 font-medium my-1 drop-shadow text-red-100">
               Shailendra Kumar Bind

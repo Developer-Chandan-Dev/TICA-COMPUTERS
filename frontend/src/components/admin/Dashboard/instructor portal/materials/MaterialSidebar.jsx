@@ -5,12 +5,13 @@ import { useDispatch } from "react-redux";
 import { setMaterialHeading } from "../../../../../features/admin/MaterialHeading/materialHeadingSlice";
 
 const MaterialSidebar = ({ categories, onCategorySelect }) => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [data, setData] = useState(null);
   const location = useLocation();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const materialHeading = fetch("/api/v1/instructor/materials-heading");
+    const materialHeading = fetch(`${VITE_API_URL}/api/v1/instructor/materials-heading`);
     materialHeading
       .then((value) => {
         return value.json();

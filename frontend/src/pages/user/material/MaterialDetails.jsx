@@ -5,9 +5,10 @@ import useFetchSingleData from "../../../hooks/utils/useFetchSingleData";
 import Spinner from "../../../components/utility/Spinner";
 
 const MaterialDetails = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const { materialDetailsId } = useParams();
   const { data, error, loading } = useFetchSingleData(
-    "/api/v1/instructor/materials",
+    `${VITE_API_URL}/api/v1/instructor/materials`,
     materialDetailsId
   );
 

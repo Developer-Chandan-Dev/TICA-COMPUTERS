@@ -7,6 +7,7 @@ import { formatDateToHTML } from "../../formateDateToHTML";
 import useHandleInstructorAndStaffForm from "../../../../../hooks/admin/admin portal/useHandleInstructorAndStaffForm";
 
 const UpdateStaffForm = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const {
     formData,
     handleChange,
@@ -58,7 +59,7 @@ const UpdateStaffForm = () => {
 
   useEffect(() => {
     const instructorData = async () => {
-      const response = await axios.get(`/api/v1/admin/staff/${staffId}`);
+      const response = await axios.get(`${VITE_API_URL}/api/v1/admin/staff/${staffId}`);
       const data = response.data;
       console.log(data);
 
@@ -71,7 +72,7 @@ const UpdateStaffForm = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    const data = await handleSubmit(`/api/v1/admin/staff/${staffId}`);
+    const data = await handleSubmit(`${VITE_API_URL}/api/v1/admin/staff/${staffId}`);
     if (data) {
       console.log("Staff added:", data);
       toast.success(data.message);

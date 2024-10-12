@@ -42,14 +42,14 @@ const SliderComponent = () => {
     <Slider {...settings}>
       {slides.map((slide, index) => (
         <div key={index} className={`slide w-full slide${index}`}>
-          <div className="slide-content">
+          {/* <div className="slide-content">
             <div className="slide-info">
               <h2 className="text-2xl md:text-3xl lg:text-4xl py-2">
                 <b>{slide.title}</b>
               </h2>
               <p className=" md:text-base text-lg">{slide.description}</p>
             </div>
-          </div>
+          </div> */}
         </div>
       ))}
     </Slider>

@@ -1,6 +1,7 @@
 import useMaterialHeadings from "../../../../../hooks/admin/instructor portal/useMaterialHeadings";
 
 const ShowMaterialHeadings = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const {
     headings,
     handleEditClick,
@@ -9,7 +10,7 @@ const ShowMaterialHeadings = () => {
     handleDeleteClick,
     handleInputChange,
     handleCheckBox
-  } = useMaterialHeadings("/api/v1/instructor/materials-heading/");
+  } = useMaterialHeadings(`${VITE_API_URL}/api/v1/instructor/materials-heading/`);
 
   return (
     <div className="w-full h-auto text-sm">

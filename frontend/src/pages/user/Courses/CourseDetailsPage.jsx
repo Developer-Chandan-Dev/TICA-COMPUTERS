@@ -14,9 +14,10 @@ import Spinner from "../../../components/utility/Spinner.jsx";
 import useFetchDataUsingId from "../../../hooks/utils/useFetchDataUsingId.js";
 
 const CourseDetailsPage = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const { courseName } = useParams();
   const { data, error, loading } = useFetchDataUsingId(
-    "/api/v1/user/course",
+    `${VITE_API_URL}/api/v1/user/course`,
     courseName
   );
 

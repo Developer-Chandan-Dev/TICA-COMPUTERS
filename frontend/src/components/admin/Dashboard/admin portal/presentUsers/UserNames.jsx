@@ -18,6 +18,7 @@ const UserNames = ({
   setData,
   profilePic,
 }) => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const { showAlertWithImage } = useShowImageInSweetAlert();
   console.log(data);
 
@@ -51,7 +52,7 @@ const UserNames = ({
               onClick={() =>
                 onDelete(
                   id,
-                  "/api/v1/admin/present-users",
+                  `${VITE_API_URL}/api/v1/admin/present-users`,
                   setData,
                   data,
                   "User"

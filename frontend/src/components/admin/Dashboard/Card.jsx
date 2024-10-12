@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import useFetchData from "../../../hooks/utils/useFetchData";
 
 const Card = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
+
   useGSAP(() => {
     gsap.to(".card", {
       opacity: 1,
@@ -12,8 +14,9 @@ const Card = () => {
     });
   }, []);
 
-  const { data} = useFetchData("/api/v1/dashboard/card-data");
-  
+  const { data } = useFetchData(
+    `${VITE_API_URL}/api/v1/dashboard/card-data`
+  );
 
   return (
     <>

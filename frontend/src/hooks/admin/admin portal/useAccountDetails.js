@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { useDashboardAuthContext } from "../../../context/DashboardAuthContext";
 
 const useAccountDetails = (initialState, id) => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [formData, setFormData] = useState(initialState);
@@ -44,7 +45,7 @@ const useAccountDetails = (initialState, id) => {
 
     try {
       const res = await axios.patch(
-        `/api/v1/admin/accounts/details/update/${id}`,
+        `${VITE_API_URL}/api/v1/admin/accounts/details/update/${id}`,
         formDataToSend,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -78,7 +79,7 @@ const useAccountDetails = (initialState, id) => {
   // <--------- Handle Logout ---------->
   const handleLogout = async () => {
     // Send request to backend to clear cookies
-    await fetch("/api/v1/admin/dashboard/logout", {
+    await fetch(`${VITE_API_URL}/api/v1/admin/dashboard/logout`, {
       method: "POST",
       credentials: "include", // This ensures cookies are sent with the request
     });

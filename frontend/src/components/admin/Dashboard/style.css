@@ -2,7 +2,8 @@
   width: 70px !important;
 }
 .dashboard_banner {
-  background-image: url("../../../assets/images/dashboard-banner.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../../../assets/images/dashboard-banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: darken;

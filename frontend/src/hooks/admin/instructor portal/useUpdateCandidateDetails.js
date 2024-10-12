@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 
 const useUpdateCandidateDetails = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -48,7 +49,7 @@ const useUpdateCandidateDetails = () => {
     }
 
     try {
-      const res = await fetch(`/api/v1/instructor/registered-candidates/${id}`, {
+      const res = await fetch(`${VITE_API_URL}/api/v1/instructor/registered-candidates/${id}`, {
         method: "PUT",
         body: formData, // No need to set Content-Type header
       });

@@ -20,6 +20,7 @@ const EnquiryInfo = ({
   setData,
   userPic,
 }) => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const dispatch = useDispatch();
   const handleClick = () => {
     dispatch(
@@ -62,7 +63,7 @@ const EnquiryInfo = ({
               onClick={() =>
                 onDelete(
                   id,
-                  "/api/v1/instructor/enquiry",
+                  `${VITE_API_URL}/api/v1/instructor/enquiry`,
                   setData,
                   data,
                   "enquiry"

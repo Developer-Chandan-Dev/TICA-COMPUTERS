@@ -5,6 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const EditAccountDetails = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const { accountId } = useParams();
 
   const {
@@ -47,7 +48,7 @@ const EditAccountDetails = () => {
     const fetchUserDetails = async () => {
       try {
         const response = await axios.get(
-          `/api/v1/admin/accounts/details/${accountId}`
+          `${VITE_API_URL}/api/v1/admin/accounts/details/${accountId}`
         );
         const data = response.data;
 

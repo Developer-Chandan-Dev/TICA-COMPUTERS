@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { useDashboardAuthContext } from "../../../context/DashboardAuthContext";
 
 const useEditAccountDetails = (initialState, id) => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [loading, setLoading] = useState(false);
   const [loading2, setLoading2] = useState(false);
   const [error, setError] = useState(null);
@@ -46,7 +47,7 @@ const useEditAccountDetails = (initialState, id) => {
     try {
       setLoading(true);
       const res = await axios.put(
-        `/api/v1/admin/accounts/details/update/${id}`,
+        `${VITE_API_URL}/api/v1/admin/accounts/details/update/${id}`,
         formDataToSend,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -100,7 +101,7 @@ const useEditAccountDetails = (initialState, id) => {
 
     try {
       const response = await axios.patch(
-        `/api/v1/admin/accounts/details/update-password/${id}`,
+        `${VITE_API_URL}/api/v1/admin/accounts/details/update-password/${id}`,
         { oldpassword, password, confirmPassword }
       );
 

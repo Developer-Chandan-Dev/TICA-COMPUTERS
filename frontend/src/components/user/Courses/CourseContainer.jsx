@@ -5,7 +5,8 @@ import useFetchData from "../../../hooks/utils/useFetchData.js";
 import Spinner from "../../utility/Spinner";
 
 const CourseContainer = () => {
-  const { data, error, loading } = useFetchData("/api/v1/user/course/");
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
+  const { data, error, loading } = useFetchData(`${VITE_API_URL}/api/v1/user/course/`);
 
   return (
     <section

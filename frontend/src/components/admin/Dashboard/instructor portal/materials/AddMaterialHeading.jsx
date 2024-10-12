@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { addMaterialHeading } from "../../../../../features/admin/MaterialHeading/materialHeadingSlice";
 
 const AddMaterialHeading = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [heading, setHeading] = useState("");
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const AddMaterialHeading = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/v1/instructor/materials-heading/add", {
+      const res = await fetch(`${VITE_API_URL}/api/v1/instructor/materials-heading/add`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -9,10 +9,11 @@ import {
 } from "../../../../components/admin/Dashboard/instructor portal/index";
 
 const InstructorPortal = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   useEffect(() => {
     const fetchDashboardLoginMessage = async () => {
       try {
-        const response = await axios.get("/api/v1/dashboard/instructor-panel");
+        const response = await axios.get(`${VITE_API_URL}/api/v1/dashboard/instructor-panel`);
         const data = response.data;
         toast.success(data.message);
       } catch (error) {

@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import axios from "axios";
 
 const Student = ({ currentPage, setTotalPages, searchTerm }) => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [itemsPerPage] = useState(7); // Define items per page
@@ -11,7 +12,7 @@ const Student = ({ currentPage, setTotalPages, searchTerm }) => {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const response = await axios.get("/api/v1/user/student/", {
+        const response = await axios.get(`${VITE_API_URL}/api/v1/user/student/`, {
           params: {
             page: currentPage,
             limit: itemsPerPage,

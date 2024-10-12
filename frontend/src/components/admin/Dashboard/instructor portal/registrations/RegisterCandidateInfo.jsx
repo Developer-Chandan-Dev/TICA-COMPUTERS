@@ -22,6 +22,7 @@ const RegisterCandidateInfo = ({
   setChecked,
   checked,
 }) => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const { authDashboardUser } = useDashboardAuthContext();
 
   const handleChange = () => {
@@ -103,7 +104,7 @@ const RegisterCandidateInfo = ({
                 authDashboardUser.role === "instructor"
                   ? onDelete(
                       id,
-                      "/api/v1/instructor/registered-candidates/",
+                      `${VITE_API_URL}/api/v1/instructor/registered-candidates/`,
                       setData,
                       data,
                       setChecked,

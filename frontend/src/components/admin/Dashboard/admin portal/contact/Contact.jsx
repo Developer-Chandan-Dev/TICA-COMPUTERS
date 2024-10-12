@@ -4,8 +4,10 @@ import useFetchData from "../../../../../hooks/utils/useFetchData";
 import Spinner from "../../../../utility/Spinner";
 
 const Contact = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
+
   const { data, error, loading, setData } = useFetchData(
-    "/api/v1/admin/contact"
+    `${VITE_API_URL}/api/v1/admin/contact`
   );
 
   // HandleDelete hook

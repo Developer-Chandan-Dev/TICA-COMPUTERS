@@ -4,13 +4,14 @@ import { toast } from "react-toastify";
 import Spinner from "../../../../utility/Spinner";
 
 const AllMaterials = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [checkedIds, setCheckedIds] = useState([]);
 
   useEffect(() => {
     setLoading(true);
-    const allMaterialsData = fetch("/api/v1/instructor/materials");
+    const allMaterialsData = fetch(`${VITE_API_URL}/api/v1/instructor/materials`);
     allMaterialsData
       .then((value) => {
         return value.json();
@@ -43,7 +44,7 @@ const AllMaterials = () => {
     setLoading(true);
     try {
       const res = await fetch(
-        `/api/v1/instructor/materials/home-data/${objectId}`,
+        `${VITE_API_URL}/api/v1/instructor/materials/home-data/${objectId}`,
         {
           method: "PUT",
           headers: { "Content-Type": "Application/json" },

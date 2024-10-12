@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 
 const useMaterialFormUpdate = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [loading, setLoading] = useState(false);
 
   const updateMaterialForm = async ({
@@ -14,7 +15,7 @@ const useMaterialFormUpdate = () => {
   }) => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/v1/instructor/materials/${id}`, {
+      const res = await fetch(`${VITE_API_URL}/api/v1/instructor/materials/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

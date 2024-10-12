@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+// MONGODB_ALTAS_URI
 mongoose.connect(process.env.MONGODB_ALTAS_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

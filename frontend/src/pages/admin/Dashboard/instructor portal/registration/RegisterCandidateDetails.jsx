@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { indianDate } from "../../../../../components/admin/Dashboard/indianDate";
 
 const RegisterCandidateDetails = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [candidateData, setCandidateData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -12,7 +13,7 @@ const RegisterCandidateDetails = () => {
   useEffect(() => {
     const fetchcandidateData = async () => {
       const response = await axios.get(
-        `/api/v1/instructor/registered-candidates/${candidateId}`
+        `${VITE_API_URL}/api/v1/instructor/registered-candidates/${candidateId}`
       );
 
       const data = response.data;

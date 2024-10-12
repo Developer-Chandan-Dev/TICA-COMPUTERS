@@ -6,12 +6,13 @@ import { setMaterialHeading } from "../../../features/admin/MaterialHeading/mate
 import useAnimatedMenu from "../../../hooks/user/useAnimatedMenu";
 
 const MaterialSidebar = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [data, setData] = useState(null);
   const location = useLocation();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const materialHeading = fetch("/api/v1/instructor/materials-heading");
+    const materialHeading = fetch(`${VITE_API_URL}/api/v1/instructor/materials-heading`);
     materialHeading
       .then((value) => {
         return value.json();

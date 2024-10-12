@@ -9,7 +9,7 @@ const AdminHome = () => {
   return (
     <>
       <div className="w-full h-[350px] rounded-lg mb-5 adminBanner flex items-start">
-        <div className="pt-8 pb-10 pl-10 pr-5 w-[650px] drop-shadow text-[#07090e] sm:ml-10 mt-10 backdrop-filter backdrop-blur-sm bg-opacity-5">
+        <div className="pt-8 pb-10 pl-10 pr-5 w-[650px] drop-shadow text-slate-200 sm:ml-10 mt-10 backdrop-filter backdrop-blur-sm bg-opacity-5">
           <h1 className="text-3xl font-bold py-2 ">Admin Panel</h1>
           <p className="text-sm sm:text-base">
             Welcome your{" "}

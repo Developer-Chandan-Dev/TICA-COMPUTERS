@@ -6,9 +6,10 @@ import Spinner from "../../../components/utility/Spinner";
 import useFetchDataUsingId from "../../../hooks/utils/useFetchDataUsingId";
 
 const InstructorDetailsPage = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const { instructorId } = useParams();
   const { data, loading, error } = useFetchDataUsingId(
-    "/api/v1/admin/instructor",
+    `${VITE_API_URL}/api/v1/admin/instructor`,
     instructorId
   );
 

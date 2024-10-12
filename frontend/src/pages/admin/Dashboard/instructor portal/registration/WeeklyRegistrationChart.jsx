@@ -22,6 +22,7 @@ ChartJS.register(
 );
 
 const WeeklyRegistrationChart = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [chartData, setChartData] = useState({});
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth() + 1);
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
@@ -30,7 +31,7 @@ const WeeklyRegistrationChart = () => {
     const fetchWeeklyData = async () => {
       try {
         const response = await axios.get(
-          "/api/v1/instructor/registered-candidates/registration/current-month-weeks",
+          `${VITE_API_URL}/api/v1/instructor/registered-candidates/registration/current-month-weeks`,
           {
             params: { month: currentMonth, year: currentYear },
           }

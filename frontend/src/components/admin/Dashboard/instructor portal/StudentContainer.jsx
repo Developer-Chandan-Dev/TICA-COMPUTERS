@@ -8,6 +8,7 @@ import axios from "axios";
 import PropTypes from "prop-types";
 
 const StudentContainer = () => {
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -27,7 +28,7 @@ const StudentContainer = () => {
     setLoading(true);
     const fetchStudents = async () => {
       try {
-        const response = await axios.get(`/api/v1/instructor/student/`, {
+        const response = await axios.get(`${VITE_API_URL}/api/v1/instructor/student/`, {
           params: {
             page: currentPage,
             limit: itemsPerPage,

@@ -6,10 +6,12 @@ const instructorSchema = new mongoose.Schema(
     fullname: {
       type: String,
       required: true,
+      trim: true,
     },
     email: {
       type: String,
       required: true,
+      trim: true,
     },
     phoneno: {
       type: String,
@@ -48,35 +50,33 @@ const instructorSchema = new mongoose.Schema(
 
     specilization: {
       type: [String],
-      required: true,
     },
 
     experience: [{ year: String, experiencePlace: String }],
 
     courseTaught: {
       type: [String],
-      required: true,
     },
     bio: {
       type: String,
-      required: true,
     },
 
     // Employment Information
 
     employmentStatus: {
       type: String,
-      required: true,
       enum: ["Full-Time", "Part-Time"],
+      required: true,
     },
     department: {
       type: String,
-      required: true,
       enum: ["Software", "Hardware", "Software & Hardware"],
+      required: true,
     },
     joiningDate: {
       type: Date,
       required: true,
+      default: Date.now,
     },
 
     //   Additional Information
@@ -89,7 +89,6 @@ const instructorSchema = new mongoose.Schema(
 
     certification: {
       type: [String],
-      required: true,
     },
     socialMediaUrls: {
       facebook: { type: String, trim: true },
@@ -100,7 +99,6 @@ const instructorSchema = new mongoose.Schema(
     },
     emergencyContactInfo: {
       type: [String],
-      required: true,
     },
   },
   { timestamps: true }

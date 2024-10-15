@@ -2,9 +2,10 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import "./style.css";
 import AboutDeveloper from "./AboutDeveloper";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import useFetchData from "../../../hooks/utils/useFetchData";
+import Spinner from "../../utility/Spinner";
+import aboutImg from '../../../assets/3.jpg'
+
 
 const AboutContainer = () => {
   const VITE_API_URL = import.meta.env.VITE_API_URL;
@@ -40,7 +41,9 @@ const AboutContainer = () => {
   //   }
   // }, []);
 
-  const { data, error, loading } = useFetchData(`${VITE_API_URL}/api/v1/user/about-data`);
+  const { data, error, loading } = useFetchData(
+    `${VITE_API_URL}/api/v1/user/about-data`
+  );
 
   console.log(data);
   // console.log(data.totalCourses);
@@ -80,11 +83,18 @@ const AboutContainer = () => {
         </div>
 
         <div className="w-3/4 sm:w-1/2 my-7 h-56 mx-auto  flex items-center justify-around">
+        {loading && <Spinner/>}
+        {error && <p>{error}</p>}
+        
           <div className="p-4 flex-center flex-col">
             <h1 className="text-5xl text-blue-500">
               <b>
-                {" "}
-                {data !== null ? data.totalStudents : "Not any student found"}+
+                {data !== null ? (
+                  data.totalStudents
+                ) : (
+                  <p>Not any students found</p>
+                )}
+                +
               </b>
             </h1>
             <h3 className="text-lg text-teal-800 mt-2">
@@ -94,8 +104,12 @@ const AboutContainer = () => {
           <div className="p-4 flex-center flex-col">
             <h1 className="text-3xl text-green-500">
               <b>
-                {" "}
-                {data !== null ? data.totalCourses : "Not any course found"}+
+                {data !== null ? (
+                  data.totalCourses
+                ) : (
+                  <p>Not any course found</p>
+                )}
+                +
               </b>
             </h1>
             <h3 className="text-lg text-teal-800 mt-2">

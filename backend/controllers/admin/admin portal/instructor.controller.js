@@ -38,7 +38,7 @@ const addInstructorByAdmin = async (req, res) => {
   try {
     const { username, password, confirmPassword, ...data } = req.body;
     const profilePic = req.file ? req.file.path : null; // Get local file path
-
+    console.log(username, password, confirmPassword, data);
     if (!username || !password || !confirmPassword) {
       return res.status(400).json({
         error: "Username, password, and confirmPassword are required",
@@ -50,6 +50,7 @@ const addInstructorByAdmin = async (req, res) => {
     }
 
     const user = await DashboardUsers.findOne({ username, role: "instructor" });
+    
     if (user) {
       return res.status(400).json({ error: "Instructor name already exists" });
     }
@@ -68,9 +69,10 @@ const addInstructorByAdmin = async (req, res) => {
     // Insert into Instructor collection (excluding username, password, and role)
     const instructor = new Instructor({
       ...data,
-      profilePic: result.secure_url,
-      profilePicPublicId: result.public_id,
+      profilePic: result?.secure_url,
+      profilePicPublicId: result?.public_id,
     });
+    
 
     // Insert into Dashboard collection
     const newDashboardUser = new DashboardUsers({
@@ -78,10 +80,11 @@ const addInstructorByAdmin = async (req, res) => {
       password: hashedPassword,
       role: "instructor",
       fullname: data.fullname,
-      profilePic: result.secure_url,
-      profilePicPublicId: result.public_id,
+      profilePic: result?.secure_url,
+      profilePicPublicId: result?.public_id,
       email: data.email,
     });
+    console.log(instructor,'87', newDashboardUser);
 
     if (newDashboardUser && instructor) {
       const savedDashboardUser = await newDashboardUser.save();

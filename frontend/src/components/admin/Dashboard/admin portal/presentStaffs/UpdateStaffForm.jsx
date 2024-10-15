@@ -259,7 +259,6 @@ const UpdateStaffForm = () => {
                           name="education"
                           placeholder="Year"
                           id="education"
-                          required
                         />
                       </div>
                       <div className="px-2 my-2 w-full h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-between">
@@ -276,7 +275,6 @@ const UpdateStaffForm = () => {
                           name="college"
                           placeholder="Collage Name"
                           id="college"
-                          required
                         />
                         <button
                           className="removeFieldBtn"
@@ -322,7 +320,6 @@ const UpdateStaffForm = () => {
                       placeholder="Specializations"
                       name="specializations"
                       id="specializations"
-                      required
                     />
                     <button
                       className="removeFieldBtn"
@@ -366,7 +363,6 @@ const UpdateStaffForm = () => {
                         name="year"
                         placeholder="Experience Year"
                         id="experience"
-                        required
                       />
                     </div>
                     <div className="px-2 my-2 w-full h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-between">
@@ -383,7 +379,6 @@ const UpdateStaffForm = () => {
                         name="experience"
                         placeholder="Experience place/institute/company etc."
                         id="experience place"
-                        required
                       />
                       <button
                         className="removeFieldBtn"
@@ -554,7 +549,6 @@ const UpdateStaffForm = () => {
                         name="title"
                         placeholder="Skills Title"
                         id="skills"
-                        required
                       />
                     </div>
                     <div className="px-2 my-2 w-full h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-between">
@@ -616,7 +610,6 @@ const UpdateStaffForm = () => {
                       name="certification"
                       placeholder="Certifications"
                       id="certification"
-                      required
                     />
                     <button
                       className="removeFieldBtn"
@@ -661,7 +654,6 @@ const UpdateStaffForm = () => {
                       name="emergencyContactInfo"
                       placeholder="Emergency Contact Info"
                       id="emergencyContactInfo"
-                      required
                     />
                     <button
                       className="removeFieldBtn"

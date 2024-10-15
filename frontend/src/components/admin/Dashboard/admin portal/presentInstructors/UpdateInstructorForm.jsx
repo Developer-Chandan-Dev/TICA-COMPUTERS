@@ -247,7 +247,7 @@ const UpdateInstructorForm = () => {
                   <>
                     <div
                       className="px-2 my-2 w-full h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-between"
-                      key={index++}
+                      key={index}
                     >
                       <input
                         type="text"
@@ -262,7 +262,6 @@ const UpdateInstructorForm = () => {
                         name="education"
                         placeholder="Year"
                         id="education"
-                        required
                       />
                     </div>
                     <div className="px-2 my-2 w-full h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-between">
@@ -279,7 +278,6 @@ const UpdateInstructorForm = () => {
                         name="college"
                         placeholder="Collage Name"
                         id="college"
-                        required
                       />
                       <button
                         className="removeFieldBtn"
@@ -309,7 +307,7 @@ const UpdateInstructorForm = () => {
                 {formData.specilization.map((item, index) => (
                   <div
                     className="px-2 my-2 w-full h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-between"
-                    key={index++}
+                    key={index}
                   >
                     <input
                       type="text"
@@ -325,7 +323,6 @@ const UpdateInstructorForm = () => {
                       placeholder="Specializations"
                       name="specializations"
                       id="specializations"
-                      required
                     />
                     <button
                       className="removeFieldBtn"
@@ -354,7 +351,7 @@ const UpdateInstructorForm = () => {
                   <>
                     <div
                       className="px-2 my-2 w-full h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-between"
-                      key={index++}
+                      key={index}
                     >
                       <input
                         type="text"
@@ -369,7 +366,6 @@ const UpdateInstructorForm = () => {
                         name="year"
                         placeholder="Experience Year"
                         id="experience"
-                        required
                       />
                     </div>
                     <div className="px-2 my-2 w-full h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-between">
@@ -386,7 +382,6 @@ const UpdateInstructorForm = () => {
                         name="experience"
                         placeholder="Experience place/institute/company etc."
                         id="experience place"
-                        required
                       />
                       <button
                         className="removeFieldBtn"
@@ -419,7 +414,7 @@ const UpdateInstructorForm = () => {
                 {formData.courseTaught.map((item, index) => (
                   <div
                     className="px-2 my-2 w-full h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-between"
-                    key={index++}
+                    key={index}
                   >
                     <input
                       type="text"
@@ -431,7 +426,6 @@ const UpdateInstructorForm = () => {
                       name="courseTaught"
                       placeholder="Course Taught"
                       id="courseTaught"
-                      required
                     />
                     <button
                       className="removeFieldBtn"
@@ -484,6 +478,7 @@ const UpdateInstructorForm = () => {
                     id="employmentStatus"
                     value={formData.employmentStatus}
                     onChange={handleChange}
+                    required
                   >
                     <option value="">Choose option</option>
                     <option value="Full-Time">Full-Time</option>
@@ -500,6 +495,7 @@ const UpdateInstructorForm = () => {
                     id="department"
                     value={formData.department}
                     onChange={handleChange}
+                    required
                   >
                     <option value="">Choose option</option>
                     <option value="Software">Software</option>
@@ -522,7 +518,6 @@ const UpdateInstructorForm = () => {
                     onChange={handleChange}
                     name="joiningDate"
                     id="dateOfJoining"
-                    required
                   />
                 </div>
               </div>
@@ -542,7 +537,7 @@ const UpdateInstructorForm = () => {
                   <>
                     <div
                       className="px-2 my-2 w-full h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-between"
-                      key={index++}
+                      key={index}
                     >
                       <input
                         type="text"
@@ -557,7 +552,6 @@ const UpdateInstructorForm = () => {
                         name="title"
                         placeholder="Skills Title"
                         id="skills"
-                        required
                       />
                     </div>
                     <div className="px-2 my-2 w-full h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-between">
@@ -603,7 +597,7 @@ const UpdateInstructorForm = () => {
                 {formData.certification.map((item, index) => (
                   <div
                     className="px-2 my-2 w-full h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-between"
-                    key={index++}
+                    key={index}
                   >
                     <input
                       type="text"
@@ -619,7 +613,6 @@ const UpdateInstructorForm = () => {
                       name="certification"
                       placeholder="Certifications"
                       id="certification"
-                      required
                     />
                     <button
                       className="removeFieldBtn"
@@ -648,7 +641,7 @@ const UpdateInstructorForm = () => {
                 {formData.emergencyContactInfo.map((item, index) => (
                   <div
                     className="px-2 my-2 w-full h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-between"
-                    key={index++}
+                    key={index}
                   >
                     <input
                       type="text"

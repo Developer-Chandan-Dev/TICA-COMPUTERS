@@ -110,6 +110,7 @@ const useHandleInstructorAndStaffForm = (initialState, method) => {
       setFormData(initialState);
       return response.data;
     } catch (error) {
+      console.log(error);
       setLoading(false);
       setError(error.response?.data?.message || "Something went wrong");
       return null;

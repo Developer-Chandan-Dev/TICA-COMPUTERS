@@ -113,5 +113,84 @@
   align-items: center;
 }
 
-.slide-content {
+/* .slide-content {
+} */
+@media (max-width: 1250px) {
+  .slide {
+    height: 440px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .slide {
+    height: 410px;
+  }
+}
+@media (max-width: 1100px) {
+  .slide {
+    height: 370px;
+  }
+}
+@media (max-width: 1000px) {
+  .slide {
+    height: 350px;
+  }
+}
+
+@media (max-width: 700px) {
+  .slide {
+    height: 320px;
+  }
+  .slide0 {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("../assets/images/dashboard-banner - 2.jpg");
+      background-position: center;
+  }
+  .slide1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("../assets/images/course-complete - 2.jpg");
+  }
+  .slide2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("../assets/images/students - 2.jpg");
+      background-position: top;
+  }
+  .slide3 {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("../assets/images/contact - 2.jpg");
+      background-position: top;
+  }
+  .slick-prev:before, .slick-next:before{
+    font-size: 26px;
+  }
+  .slick-prev{
+    left: 7px;
+  }
+  .slick-next{
+    right: 7px;
+  }
+}
+
+@media (max-width: 500px) {
+  .slide {
+    height: 300px;
+  }
+  .slick-prev:before, .slick-next:before{
+    font-size: 24px;
+  }
+}
+@media (max-width: 400px) {
+  .slide {
+    height: 290px;
+  }
+}
+@media (max-width: 350px) {
+  .slide {
+    height: 270px;
+  }
+}
+@media (max-width: 300px) {
+  .slide {
+    height: 260px;
+  }
 }

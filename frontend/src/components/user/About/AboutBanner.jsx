@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Link } from "react-router-dom";
+import course from '../../../assets/images/courses.jpg'
 
 const AboutBanner = () => {
   useGSAP(() => {
@@ -61,7 +62,7 @@ const AboutBanner = () => {
             </Link>
           </div>
           <div className=" w-5/12 aboutBannerImg opacity-0 translate-x-20">
-            <img src="/src/assets/images/courses.jpg" alt="" />
+            <img src={course} alt="course" />
           </div>
         </div>
       </section>

@@ -165,9 +165,9 @@ function Navbar() {
           style={{ background: "#104d6b" }}
         >
           <ul className="mx-auto cursor-pointer" onClick={openHamburger}>
-            <li className="rounded-lg h-1 w-4 mx-auto bg-gray-100"></li>
-            <li className="rounded-lg h-1 w-4 mx-auto bg-gray-100"></li>
-            <li className="rounded-lg h-1 w-4 mx-auto bg-gray-100"></li>
+            <li className="rounded-lg h-1 w-5 mx-auto bg-gray-100"></li>
+            <li className="rounded-lg h-1 w-5 mx-auto bg-gray-100"></li>
+            <li className="rounded-lg h-1 w-5 mx-auto bg-gray-100"></li>
           </ul>
         </div>
         <div className="flex items-center relative">

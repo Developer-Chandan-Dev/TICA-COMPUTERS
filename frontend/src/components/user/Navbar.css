@@ -8,8 +8,8 @@
 
 .openButton {
   position: absolute;
-  width: 24px;
-  height: 26px;
+  width: 28px;
+  height: 30px;
   left: 0px;
   top: 64px;
   transition: all ease 0.3s;
@@ -18,7 +18,7 @@
   align-items: center;
 }
 .openButton ul li{
-  margin: 2px 0px;
+  margin: 3px 0px;
   height: 3px;
 }
 

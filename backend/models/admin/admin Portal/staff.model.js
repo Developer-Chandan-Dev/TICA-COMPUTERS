@@ -48,35 +48,29 @@ const staffSchema = new mongoose.Schema(
 
     specilization: {
       type: [String],
-      required: true,
     },
 
     experience: [{ year: String, experiencePlace: String }],
 
     courseTaught: {
       type: [String],
-      required: true,
     },
     bio: {
       type: String,
-      required: true,
     },
 
     // Employment Information
 
     employmentStatus: {
       type: String,
-      required: true,
       enum: ["Full-Time", "Part-Time"],
     },
     department: {
       type: String,
-      required: true,
       enum: ["Software", "Hardware", "Software & Hardware"],
     },
     joiningDate: {
       type: Date,
-      required: true,
     },
 
     //   Additional Information
@@ -89,7 +83,6 @@ const staffSchema = new mongoose.Schema(
 
     certification: {
       type: [String],
-      required: true,
     },
 
     socialMediaUrls: {
@@ -101,7 +94,6 @@ const staffSchema = new mongoose.Schema(
     },
     emergencyContactInfo: {
       type: [String],
-      required: true,
     },
   },
   { timestamps: true }

@@ -6,7 +6,7 @@ import { useDashboardAuthContext } from "../../../context/DashboardAuthContext";
 
 const useUpdateUser = (initialState) => {
   const VITE_API_URL = import.meta.env.VITE_API_URL;
-  console.log(VITE_API_URL)
+  console.log(VITE_API_URL);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState(initialState);
 
@@ -87,6 +87,7 @@ const useUpdateUser = (initialState) => {
   // <--------- Handle Logout ---------->
   const handleLogout = async () => {
     // Send request to backend to clear cookies
+    console.log(`${VITE_API_URL}/api/v1/auth/logout`);
     await fetch(`${VITE_API_URL}/api/v1/auth/logout`, {
       method: "POST",
       credentials: "include", // This ensures cookies are sent with the request

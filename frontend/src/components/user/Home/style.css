@@ -54,7 +54,6 @@
   text-align: center;
   padding: 20px;
   top: 50%;
-  left: 0%;
   transform: translateY(-50%);
 }
 
@@ -69,6 +68,11 @@
   }
 }
 
+@media (max-width: 450px) {
+  .home-students-section{
+    width: 96% !important;
+  }
+}
 
 @media (max-width: 350px) {
   .formSection{

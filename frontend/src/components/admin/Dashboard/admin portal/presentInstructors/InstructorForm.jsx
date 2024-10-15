@@ -54,7 +54,9 @@ const InstructorForm = () => {
   );
   const onSubmit = async (e) => {
     e.preventDefault();
-    const data = await handleSubmit(`${VITE_API_URL}/api/v1/admin/instructor/add`);
+    const data = await handleSubmit(
+      `${VITE_API_URL}/api/v1/admin/instructor/add`
+    );
     console.log(data);
     if (data) {
       toast.success(data.message);
@@ -77,7 +79,10 @@ const InstructorForm = () => {
             <div className="inputBoxes flex w-full items-center flex-wrap gap-3">
               <div className="inputBox my-2 w-full sm:w-auto">
                 <label htmlFor="fullname">Full Name</label>
-                <div className="px-2 my-2 w-full sm:w-72 h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start">
+                <div className="px-2 my-2 w-full sm:w-72 h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start relative">
+                  <span className="absolute right-1 text-red-500 top-0 text-md font-bold">
+                    *
+                  </span>
                   <input
                     type="text"
                     className="w-fill-available sm:w-64 bg-transparent outline-none"
@@ -92,7 +97,10 @@ const InstructorForm = () => {
               </div>
               <div className="inputBox my-2 w-full sm:w-auto">
                 <label htmlFor="email">Email Address</label>
-                <div className="px-2 my-2 w-full sm:w-72  h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start">
+                <div className="px-2 my-2 w-full sm:w-72 relative h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start">
+                  <span className="absolute right-1 text-red-500 top-0 text-md font-bold">
+                    *
+                  </span>
                   <input
                     type="email"
                     className=" w-fill-available sm:w-64 bg-transparent outline-none"
@@ -109,7 +117,10 @@ const InstructorForm = () => {
             <div className="inputBoxes flex w-full items-center flex-wrap gap-3">
               <div className="inputBox my-2 w-full sm:w-auto">
                 <label htmlFor="phoneno">Phone Number</label>
-                <div className="px-2 my-2 w-full sm:w-72  h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start">
+                <div className="px-2 my-2 w-full sm:w-72 relative h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start">
+                  <span className="absolute right-1 text-red-500 top-0 text-md font-bold">
+                    *
+                  </span>
                   <input
                     type="text"
                     className=" w-fill-available sm:w-64 bg-transparent outline-none"
@@ -126,7 +137,10 @@ const InstructorForm = () => {
               </div>
               <div className="inputBox my-2 w-full sm:w-auto">
                 <label htmlFor="DOB">Date of Birth</label>
-                <div className="px-2 my-2 w-full md:w-72 h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start">
+                <div className="px-2 my-2 relative w-full md:w-72 h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start">
+                  <span className="absolute right-1 text-red-500 top-0 text-md font-bold">
+                    *
+                  </span>
                   <input
                     type="date"
                     className=" w-fill-available sm:w-64 bg-transparent outline-none"
@@ -142,7 +156,10 @@ const InstructorForm = () => {
             <div className="inputBoxes flex w-full items-center flex-wrap gap-3">
               <div className="inputBox my-2 w-full sm:w-auto">
                 <label htmlFor="address">Address</label>
-                <div className="px-2 my-2 w-full sm:w-72  h-20 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start">
+                <div className="px-2 my-2 w-full sm:w-72 relative h-20 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start">
+                  <span className="absolute right-1 text-red-500 top-0 text-md font-bold">
+                    *
+                  </span>
                   <textarea
                     name="address"
                     id="address"
@@ -162,7 +179,6 @@ const InstructorForm = () => {
                     className=" w-fill-available sm:w-64 bg-transparent outline-none"
                     accept="image/*"
                     onChange={handleFileChange}
-                    required
                     id="profilePicture"
                     name="profilePicture"
                   />
@@ -173,7 +189,10 @@ const InstructorForm = () => {
               {/* Gender Area */}
               <div className="inputBox my-2 w-full sm:w-auto">
                 <h2>Gender</h2>
-                <div className="px-2 my-2 w-full gap-x-4 sm:w-72  h-10 rounded border-2 border-slate-50 py-1 shadow-slate-700 flex items-center justify-start">
+                <div className="px-2 my-2 w-full gap-x-4 sm:w-72 relative h-10 rounded border-2 border-slate-50 py-1 shadow-slate-700 flex items-center justify-start">
+                  <span className="absolute right-1 text-red-500 top-0 text-md font-bold">
+                    *
+                  </span>
                   <div className="flex items-center gap-x-2">
                     <label htmlFor="male">Male</label>
                     <input
@@ -234,7 +253,6 @@ const InstructorForm = () => {
                       <input
                         type="text"
                         className="w-fill-available bg-transparent outline-none"
-                        required
                         value={edu.year}
                         onChange={(e) =>
                           handleArrayChange("education", index, {
@@ -251,7 +269,6 @@ const InstructorForm = () => {
                       <input
                         type="text"
                         className="w-fill-available bg-transparent outline-none"
-                        required
                         value={edu.college}
                         onChange={(e) =>
                           handleArrayChange("education", index, {
@@ -296,7 +313,6 @@ const InstructorForm = () => {
                     <input
                       type="text"
                       className="w-fill-available bg-transparent outline-none"
-                      required
                       value={item}
                       onChange={(e) =>
                         handleArrayChange(
@@ -341,7 +357,6 @@ const InstructorForm = () => {
                       <input
                         type="text"
                         className="w-fill-available bg-transparent outline-none"
-                        required
                         value={exp.year}
                         onChange={(e) =>
                           handleArrayChange("experience", index, {
@@ -358,7 +373,6 @@ const InstructorForm = () => {
                       <input
                         type="text"
                         className="w-fill-available bg-transparent outline-none"
-                        required
                         value={exp.experiencePlace}
                         onChange={(e) =>
                           handleArrayChange("experience", index, {
@@ -406,7 +420,6 @@ const InstructorForm = () => {
                     <input
                       type="text"
                       className="w-fill-available bg-transparent outline-none"
-                      required
                       value={item}
                       onChange={(e) =>
                         handleArrayChange("courseTaught", index, e.target.value)
@@ -445,7 +458,6 @@ const InstructorForm = () => {
                     placeholder="Enter your bio"
                     value={formData.bio}
                     onChange={handleChange}
-                    required
                   ></textarea>
                 </div>
               </div>
@@ -460,13 +472,15 @@ const InstructorForm = () => {
             <div className="inputBoxes flex w-full items-center flex-wrap gap-3">
               <div className="inputBox my-2 w-full sm:w-auto">
                 <h2>Employment Status</h2>
-                <div className="px-2 my-2 w-full sm:w-72 h-9 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start">
+                <div className="px-2 my-2 w-full relative sm:w-72 h-9 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start">
+                  <span className="absolute right-1 text-red-500 top-0 text-md font-bold">*</span>
                   <select
                     name="employmentStatus"
                     className=" w-full h-full bg-transparent outline-none"
                     id="employmentStatus"
                     value={formData.employmentStatus}
                     onChange={handleChange}
+                    required
                   >
                     <option value="">Choose option</option>
                     <option value="Full-Time">Full-Time</option>
@@ -476,13 +490,15 @@ const InstructorForm = () => {
               </div>
               <div className="inputBox my-2 w-full sm:w-auto">
                 <label htmlFor="department">Department</label>
-                <div className="px-2 my-2 w-full sm:w-72 h-9 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start">
+                <div className="px-2 my-2 w-full relative sm:w-72 h-9 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start">
+                  <span className="absolute right-1 text-red-500 top-0 text-md font-bold">*</span>
                   <select
                     name="department"
                     className=" w-full h-full bg-transparent outline-none"
                     id="department"
                     value={formData.department}
                     onChange={handleChange}
+                    required
                   >
                     <option value="">Choose option</option>
                     <option value="Software">Software</option>
@@ -497,7 +513,8 @@ const InstructorForm = () => {
             <div className="inputBoxes flex w-full items-center flex-wrap">
               <div className="inputBox my-2 w-full sm:w-auto">
                 <label htmlFor="dateOfJoining">Date of Joining</label>
-                <div className="px-2 my-2 w-full sm:w-72  h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start">
+                <div className="px-2 my-2 w-full sm:w-72 relative h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start">
+                  <span className="absolute right-1 text-red-500 top-0 text-md font-bold">*</span>
                   <input
                     type="date"
                     className="w-fill-available sm:w-64 bg-transparent outline-none"
@@ -520,7 +537,10 @@ const InstructorForm = () => {
             <div className="inputBoxes flex w-full items-center flex-wrap gap-3">
               <div className="inputBox my-2 w-full sm:w-auto">
                 <label htmlFor="username">Username</label>
-                <div className="px-2 my-2 w-full sm:w-72  h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start">
+                <div className="px-2 my-2 w-full sm:w-72 relative h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start">
+                  <span className="absolute right-1 text-red-500 top-0 text-md font-bold">
+                    *
+                  </span>
                   <input
                     type="text"
                     className=" w-fill-available sm:w-64 bg-transparent outline-none"
@@ -535,7 +555,10 @@ const InstructorForm = () => {
               </div>
               <div className="inputBox my-2 w-full sm:w-auto">
                 <label htmlFor="password">Password</label>
-                <div className="px-2 my-2 w-full sm:w-72  h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start">
+                <div className="px-2 my-2 w-full sm:w-72 relative h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start">
+                  <span className="absolute right-1 text-red-500 top-0 text-md font-bold">
+                    *
+                  </span>
                   <input
                     type="password"
                     id="password"
@@ -552,7 +575,10 @@ const InstructorForm = () => {
             <div className="inputBoxes flex w-full items-center flex-wrap">
               <div className="inputBox my-2 w-full sm:w-auto">
                 <label htmlFor="confirmPassword">Confirm Password</label>
-                <div className="px-2 my-2 w-full sm:w-72  h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start">
+                <div className="px-2 my-2 w-full sm:w-72 relative h-10 rounded border-2 border-slate-50 py-1 bg-slate-50 shadow shadow-slate-700 flex items-center justify-start">
+                  <span className="absolute right-1 text-red-500 top-0 text-md font-bold">
+                    *
+                  </span>
                   <input
                     type="password"
                     className=" w-fill-available sm:w-64 bg-transparent outline-none"
@@ -586,7 +612,6 @@ const InstructorForm = () => {
                       <input
                         type="text"
                         className="w-fill-available bg-transparent outline-none"
-                        required
                         value={skill.title}
                         onChange={(e) =>
                           handleArrayChange("skills", index, {
@@ -691,7 +716,6 @@ const InstructorForm = () => {
                     <input
                       type="text"
                       className="w-fill-available bg-transparent outline-none"
-                      required
                       value={item}
                       onChange={(e) =>
                         handleArrayChange(

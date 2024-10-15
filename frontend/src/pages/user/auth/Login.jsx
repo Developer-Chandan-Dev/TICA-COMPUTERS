@@ -7,7 +7,7 @@ import { useAuthContext } from "../../../context/AuthContext";
 const Login = () => {
   const [inputs, setInputs] = useState({ username: "", password: "" });
   const { authUser } = useAuthContext();
-  const { login } = useLogin();
+  const { login, loading } = useLogin();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -100,7 +100,7 @@ const Login = () => {
                         padding: "10px 0px",
                       }}
                     >
-                      SIGN IN
+                      {loading ? 'Signining' : 'SIGN IN' }
                     </button>
                     <Link
                       to="/signup"

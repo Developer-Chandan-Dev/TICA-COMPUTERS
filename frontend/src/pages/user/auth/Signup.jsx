@@ -1,4 +1,4 @@
-import './style.css'
+import "./style.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useSignUp from "../../../hooks/user/auth/useSignUp";
@@ -12,7 +12,7 @@ const Signup = () => {
     confirmPassword: "",
   });
 
-  const { signup } = useSignUp();
+  const { signup, loading } = useSignUp();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -26,7 +26,7 @@ const Signup = () => {
     });
   };
 
-  document.title="TICA Computers - Signup";
+  document.title = "TICA Computers - Signup";
 
   return (
     <>
@@ -61,7 +61,10 @@ const Signup = () => {
               </p>
               <div className="flex items-center justify-center flex-col ">
                 {/* Sign Form start */}
-                <form className="px-1 py-3 mt-1 text-sm" onSubmit={handleSubmit}>
+                <form
+                  className="px-1 py-3 mt-1 text-sm"
+                  onSubmit={handleSubmit}
+                >
                   <div
                     className="px-1 w-52 sm:w-60 flex items-center justify-start rounded-md"
                     style={{ background: "#f1f1f1", padding: "5px 4px" }}
@@ -202,7 +205,7 @@ const Signup = () => {
                         padding: "10px 0px",
                       }}
                     >
-                      SIGN UP
+                      {loading ? "Signuping" : "SIGN UP"}
                     </button>
                     <Link
                       to="/login"

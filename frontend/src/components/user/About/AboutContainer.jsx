@@ -19,34 +19,14 @@ const AboutContainer = () => {
       duration: 2,
       x: 0,
     });
-    // gsap.to(".green-box", {
-    //   opacity: 1,
-    //   duration: 1,
-    //   y: 0,
-    // });
   }, []);
 
-  // useEffect(() => {
-  //   try {
-  //     const fetchData = async () => {
-  //       const response = await axios.get("");
-  //       const responseData = response.data;
-
-  //       setData(responseData);
-  //     };
-  //     fetchData();
-  //   } catch (error) {
-  //     console.error("About data fetching Error:", error);
-  //   }
-  // }, []);
 
   const { data, error, loading } = useFetchData(
     `${VITE_API_URL}/api/v1/user/about-data`
   );
 
   console.log(data, error, loading);
-  // console.log(data.totalCourses);
-  // console.log(data.totalStudents);
   return (
     <>
       <section className="w-full h-auto mx-auto py-5 relative text-sm">
@@ -118,7 +98,6 @@ const AboutContainer = () => {
         </div>
 
         <AboutDeveloper />
-        {/* <div className=""></div> */}
       </section>
     </>
   );

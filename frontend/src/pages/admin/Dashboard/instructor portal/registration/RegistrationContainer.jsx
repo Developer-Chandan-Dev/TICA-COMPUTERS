@@ -21,12 +21,53 @@ const RegistrationContainer = () => {
         {/* main container  */}
 
         <div className="w-full md:w-11/12 mx-auto">
-          <div className="w-full h-auto md:flex items-center justify-between gap-4 py-3">
-            <div className="sm:w-96 md:w-72 lg:w-96 custom-chartBox rounded-md drop-shadow text-gray-400 h-80 bg-white p-1 sm:p-2 mx-auto flex-center">
-              <WeeklyRegistrationChart className="w-full " />
-            </div>
+          <div className="w-full h-auto md:flex md:flex-row-reverse items-center justify-between gap-4 py-3">
             <div className="sm:w-fill-available h-80 bg-white p-1 sm:p-2 mx-auto mt-5 md:mt-0 flex-center">
               <MonthlyRegistrationChart className="w-full" />
+            </div>
+            <div className="w-auto md:w-72 lg:w-96 custom-chartBox rounded-md drop-shadow text-gray-400 mt-3 md:mt-0 md:h-80 mx-auto flex-center">
+              <div className="w-full !items-start flex flex-wrap md:flex-col gap-x-2 gap-y-3">
+                <div className="w-[272px] h-24 rounded-md bg-white flex-center">
+                  <div className="w-4/5 flex items-center justify-between gap-x-2">
+                    <div>
+                      <h2 className="text-base font-semibold ">
+                        Total Students
+                      </h2>
+                      <h1 className="text-2xl font-semibold text-[#837ff3] drop-shadow pt-1">
+                        100 +
+                      </h1>
+                    </div>
+                    <div className="w-12 h-12 rounded-full border-2 border-[#837ff3]"></div>
+                  </div>
+                </div>
+                <div className="w-[272px] h-24 rounded-md bg-white flex-center">
+                  <div className="w-4/5 flex items-center justify-between gap-x-2">
+                    <div>
+                      <h2 className="text-base font-semibold ">
+                        This Month
+                      </h2>
+                      <h1 className="text-2xl font-semibold text-[#837ff3] drop-shadow pt-1">
+                        10 +
+                      </h1>
+                    </div>
+                    <div className="w-12 h-12 rounded-full border-2 border-[#837ff3]"></div>
+                  </div>
+                </div>
+                <div className="w-[272px] h-24 rounded-md bg-white border border-[#cdccfa] flex-center">
+                  <div className="w-4/5 flex items-center justify-between gap-x-2">
+                    <div>
+                      <h2 className="text-base font-semibold ">
+                        Previous Month
+                      </h2>
+                      <h1 className="text-2xl font-semibold text-[#837ff3] drop-shadow pt-1">
+                        20 +
+                      </h1>
+                    </div>
+                    <div className="w-12 h-12 rounded-full border-2 border-[#837ff3]"></div>
+                  </div>
+                </div>
+              </div>
+              {/* <WeeklyRegistrationChart className="w-full " /> */}
             </div>
           </div>
 

@@ -2,6 +2,7 @@ import "./style.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useSignUp from "../../../hooks/user/auth/useSignUp";
+import SmallSpinner from "../../../components/utility/SmallSpinner";
 
 const Signup = () => {
   const [inputs, setInputs] = useState({
@@ -205,7 +206,7 @@ const Signup = () => {
                         padding: "10px 0px",
                       }}
                     >
-                      {loading ? "Signuping" : "SIGN UP"}
+                      {loading ? <SmallSpinner/> : "SIGN UP"}
                     </button>
                     <Link
                       to="/login"

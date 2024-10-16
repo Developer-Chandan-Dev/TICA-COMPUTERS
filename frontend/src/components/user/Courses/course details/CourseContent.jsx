@@ -51,7 +51,7 @@ const CourseContent = ({ syllabus }) => {
                   <span className="font-semibold">{heading}</span>
                 </div>
                 {expandedSections.includes(index) && (
-                  <ul className="h-0 sm:h-auto ">
+                  <ul className="h-auto sm:h-auto ">
                     {topics != null
                       ? topics.map((topic, index) => (
                           <li

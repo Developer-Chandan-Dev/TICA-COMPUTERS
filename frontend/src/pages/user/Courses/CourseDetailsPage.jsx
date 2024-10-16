@@ -65,12 +65,12 @@ const CourseDetailsPage = () => {
 
               <section className="flex items-start justify-between relative w-full courseDetailsContainer p-2">
                 <div className="w-full relative">
-                  <WhatYouLearn whatYouLearn={data.whatYouLearn} fees={data.fees} duration={data.duration} courseShortName={data.courseShortName} />
-                  <MainTopics mainTopics={data.mainTopics} />
-                  <CourseContent syllabus={data.syllabus} />
-                  <CourseRequirements prerequisites={data.prerequisites} />
-                  <CourseDesc longDesc={data.longDesc} />
-                  <CourseInstructor instructor={data.instructor} />
+                  <WhatYouLearn whatYouLearn={data?.whatYouLearn} fees={data?.fees} duration={data?.duration} courseShortName={data?.courseShortName} />
+                  <MainTopics mainTopics={data?.mainTopics} />
+                  <CourseContent syllabus={data?.syllabus} />
+                  <CourseRequirements prerequisites={data?.prerequisites} />
+                  <CourseDesc longDesc={data?.longDesc} />
+                  <CourseInstructor instructor={data?.instructor} />
                 </div>
               </section>
             </section>

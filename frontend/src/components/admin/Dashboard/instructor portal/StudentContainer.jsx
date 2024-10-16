@@ -28,13 +28,16 @@ const StudentContainer = () => {
     setLoading(true);
     const fetchStudents = async () => {
       try {
-        const response = await axios.get(`${VITE_API_URL}/api/v1/instructor/student/`, {
-          params: {
-            page: currentPage,
-            limit: itemsPerPage,
-            search: searchTerm, // Send search term as a query paramter
-          },
-        });
+        const response = await axios.get(
+          `${VITE_API_URL}/api/v1/instructor/student/`,
+          {
+            params: {
+              page: currentPage,
+              limit: itemsPerPage,
+              search: searchTerm, // Send search term as a query paramter
+            },
+          }
+        );
         const data = response.data;
         if (data.error) {
           setError(data.error);
@@ -104,7 +107,6 @@ const StudentContainer = () => {
               </div>
               <div className="bg-white flex-items-center ml-4">
                 <Link to="/courses/register">
-                  {" "}
                   <button
                     className="py-2 px-5 mr-5 text-xs rounded-full border shadow hover:shadow-md hover:shadow-gray-300 "
                     style={{ color: "#958ef3" }}
@@ -172,7 +174,9 @@ const StudentContainer = () => {
                     </div>
                   )}
 
-                  {students != null ? (
+                  {Array.isArray(students) &&
+                  students.length > 0 &&
+                  students != null ? (
                     students.map(
                       ({
                         _id,

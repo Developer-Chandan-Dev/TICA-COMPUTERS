@@ -1,9 +1,22 @@
-import spinnerImg from "../../assets/icons/spinner.gif";
+import './spinner.css'
 
 const Spinner = () => {
   return (
     <div className="w-full h-full flex-center">
-      <img src={spinnerImg} alt="Loading..." />
+      <div className="lds-spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
     </div>
   );
 };

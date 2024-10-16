@@ -2,12 +2,13 @@ import gsap from "gsap";
 import { useState } from "react";
 import { useGSAP } from "@gsap/react";
 import useDashboardLogin from "../../../hooks/admin/auth/useDashboardLogin";
+import SmallSpinner from "../../../components/utility/SmallSpinner";
 
 const LoginDashboard = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
-  const { dashboardLogin, error } = useDashboardLogin();
+  const { dashboardLogin,loading, error } = useDashboardLogin();
 
   const handleRoleSelectionChange = (event) => {
     setRole(event.target.value);
@@ -102,7 +103,7 @@ const LoginDashboard = () => {
               </div>
               <div className="flex items-center py-4">
                 <button className="mx-auto px-3 py-2 w-36 bg-blue-500 transition-all hover:bg-blue-600 text-white rounded-full">
-                  Login
+                  {loading ? <SmallSpinner/> : 'Login'}
                 </button>
               </div>
             </div>

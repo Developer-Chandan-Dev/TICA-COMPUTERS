@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import useLogin from "../../../hooks/user/auth/useLogin";
 import { useAuthContext } from "../../../context/AuthContext";
+import SmallSpinner from "../../../components/utility/SmallSpinner";
 
 const Login = () => {
   const [inputs, setInputs] = useState({ username: "", password: "" });
@@ -16,7 +17,7 @@ const Login = () => {
     setInputs({ username: "", password: "" });
   };
 
-  document.title="TICA Computers - Login";
+  document.title = "TICA Computers - Login";
   return (
     <>
       <section className="w-screen h-screen bg-red-50 flex items-center justify-center">
@@ -94,13 +95,13 @@ const Login = () => {
 
                   <div className="flex justify-center items-center flex-col">
                     <button
-                      className="text-sm w-36 sm:w-44 rounded-full mt-6 font-semibold text-white shadow-md shadow-gray-400 transition-all hover:shadow-lg hover:shadow-gray-400"
+                      className="text-sm w-36 sm:w-44 rounded-full mt-6 font-semibold text-white shadow-md shadow-gray-400 transition-all hover:shadow-lg hover:shadow-gray-400 flex-center"
                       style={{
                         background: "linear-gradient(45deg, #9d79c2, #d489a7)",
                         padding: "10px 0px",
                       }}
                     >
-                      {loading ? 'Signining' : 'SIGN IN' }
+                      {loading ? <SmallSpinner /> : "SIGN IN"}
                     </button>
                     <Link
                       to="/signup"

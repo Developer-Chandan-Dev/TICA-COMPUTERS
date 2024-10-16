@@ -64,9 +64,12 @@ const RegisterCandidate = ({ searchTerm, currentPage, setTotalPages }) => {
   // Handle checkbox change and update state and local storage
   const handleApprove = async (objectId) => {
     await axios.post(`${VITE_API_URL}/api/v1/instructor/student/${objectId}`); // adding data in Student collections
-    await axios.put(`${VITE_API_URL}/api/v1/instructor/registered-candidates/${objectId}`, {
-      status: "Cleared",
-    });
+    await axios.put(
+      `${VITE_API_URL}/api/v1/instructor/registered-candidates/${objectId}`,
+      {
+        status: "Cleared",
+      }
+    );
     if (!checkedIds.includes(objectId)) {
       const updatedCheckedIds = [...checkedIds, objectId];
       setCheckedIds(updatedCheckedIds);
@@ -82,7 +85,9 @@ const RegisterCandidate = ({ searchTerm, currentPage, setTotalPages }) => {
           <p className="text-red-500">{error}</p>
         </div>
       )}
-      {candidates != null ? (
+      {Array.isArray(candidates) &&
+      candidates.length > 0 &&
+      candidates != null ? (
         candidates.map(
           ({
             _id,

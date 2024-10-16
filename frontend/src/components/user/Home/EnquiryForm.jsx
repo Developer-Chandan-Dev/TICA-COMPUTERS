@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import useEnquiryForm from "../../../hooks/user/Home/useEnquiryForm";
 import { useAuthContext } from "../../../context/AuthContext";
+import SmallSpinner from "../../utility/SmallSpinner";
 
 const EnquiryForm = () => {
   const [inputs, setInputs] = useState({
@@ -22,7 +23,7 @@ const EnquiryForm = () => {
       : "";
   }, []);
 
-  const { enquiryForm } = useEnquiryForm();
+  const { enquiryForm, loading } = useEnquiryForm();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -142,7 +143,7 @@ const EnquiryForm = () => {
           </div>
           <div className="w-full mt-4">
             <button className="w-full px-2 py-[10px] bg-red-400 transition-all hover:bg-red-500 text-white rounded-md">
-              Submit
+              {loading ? <SmallSpinner /> : "Submit"}
             </button>
           </div>
         </form>

@@ -29,8 +29,8 @@ const registerCandidate = async (req, res) => {
     // Create a new Student document
     const newStudent = new Register({
       ...data,
-      profilePic: result.secure_url,
-      profilePicPublicId: result.public_id,
+      profilePic: result ? result.secure_url : null,
+      profilePicPublicId: result ? result.public_id : null,
     });
 
     if (newStudent) {

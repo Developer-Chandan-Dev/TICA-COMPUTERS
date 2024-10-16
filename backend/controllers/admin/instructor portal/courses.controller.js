@@ -46,8 +46,8 @@ const addCourse = async (req, res) => {
     // Create new course
     const newCourse = new courseModelsByAdmin({
       ...data,
-      coursePic: result.secure_url,
-      coursePicPublicId: result.public_id,
+      coursePic: result ? result?.secure_url : null ,
+      coursePicPublicId: result ? result?.public_id : null,
     });
 
     if (newCourse) {

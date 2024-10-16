@@ -6,7 +6,6 @@ import { useDashboardAuthContext } from "../../../context/DashboardAuthContext";
 
 const useUpdateUser = (initialState) => {
   const VITE_API_URL = import.meta.env.VITE_API_URL;
-  console.log(VITE_API_URL);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState(initialState);
 

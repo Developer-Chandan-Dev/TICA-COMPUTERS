@@ -5,6 +5,7 @@ import { useAuthContext } from "../../context/AuthContext";
 import useAnimatedMenu from "../../hooks/user/useAnimatedMenu";
 import useUpdateUser from "../../hooks/user/auth/useUpdateUser";
 import logo from "../../../public/favicon.png";
+import SmallSpinner from "../utility/SmallSpinner";
 
 function Navbar() {
   // <------- States -------->
@@ -33,6 +34,7 @@ function Navbar() {
 
   // Using Hook variables here
   const {
+    loading,
     formData,
     handleChange,
     handleFileChange,
@@ -329,7 +331,7 @@ function Navbar() {
                         </div>
                         <div className="flex items-center justify-end mt-5">
                           <button type="submit" className="sm">
-                            Save
+                            {loading ? <SmallSpinner /> : "Save"}
                           </button>
                         </div>
                       </form>

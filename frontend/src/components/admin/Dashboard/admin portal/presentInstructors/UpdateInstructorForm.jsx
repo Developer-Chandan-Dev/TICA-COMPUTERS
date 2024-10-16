@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { formatDateToHTML } from "../../formateDateToHTML";
 
 import useHandleInstructorAndStaffForm from "../../../../../hooks/admin/admin portal/useHandleInstructorAndStaffForm";
+import SmallSpinner from "../../../../utility/SmallSpinner";
 
 const UpdateInstructorForm = () => {
   const VITE_API_URL = import.meta.env.VITE_API_URL;
@@ -825,7 +826,7 @@ const UpdateInstructorForm = () => {
                 "repeating-linear-gradient(45deg, rgb(13, 69, 97), rgb(158, 158, 158) 100px)",
             }}
           >
-            {loading ? "Updating..." : "Update Instructor"}
+            {loading ? <SmallSpinner/> : 'Update Instructor'}
           </button>
         </>
       </form>

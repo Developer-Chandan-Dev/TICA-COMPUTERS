@@ -2,6 +2,7 @@
 import "./instructor.css";
 import { toast } from "react-toastify";
 import useHandleInstructorAndStaffForm from "../../../../../hooks/admin/admin portal/useHandleInstructorAndStaffForm";
+import SmallSpinner from "../../../../utility/SmallSpinner";
 
 const InstructorForm = () => {
   const VITE_API_URL = import.meta.env.VITE_API_URL;
@@ -896,7 +897,7 @@ const InstructorForm = () => {
                 "repeating-linear-gradient(45deg, rgb(13, 69, 97), rgb(158, 158, 158) 100px)",
             }}
           >
-            {loading ? "Submitting..." : "Add Instructor"}
+            {loading ? <SmallSpinner/> : 'Add Instructor'}
           </button>
           <button
             className="px-5 transition-all shadow-md hover:shadow-lg hover:shadow-slate-500 shadow-slate-400 py-2 mr-2 text-white rounded"

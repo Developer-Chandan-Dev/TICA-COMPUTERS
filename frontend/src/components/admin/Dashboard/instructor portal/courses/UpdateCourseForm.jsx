@@ -97,8 +97,10 @@ const UpdateCourseForm = () => {
   console.log(formData);
   const onSubmit = async (e) => {
     e.preventDefault();
+    console.log(formData._id);
     const data = await handleSubmit(`${VITE_API_URL}/api/v1/instructor/course/${formData._id}`);
-    if (data.message == "Course updated Successfully") {
+    console.log(data, data?.message);
+    if (data?.message == "Course updated Successfully") {
       toast.success(data.message);
       navigate("/dashboard/instructor/features/courses");
     } else {

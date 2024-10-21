@@ -27,7 +27,6 @@ const EditAccountDetails = () => {
       role: "",
       email: "",
       profilePic: null,
-      profilePicPublicId: "",
     },
     accountId
   );

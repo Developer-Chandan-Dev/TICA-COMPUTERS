@@ -2,6 +2,7 @@ import EnquiryInfo from "./EnquiryInfo";
 import Spinner from "../../../../utility/Spinner";
 import useHandleDeletewithSweetAlert from "../../../../../hooks/admin/instructor portal/useHandleDeletewithSweetAlert";
 import useFetchData from "../../../../../hooks/utils/useFetchData";
+import EmptyBox from "../../../../utility/EmptyBox";
 
 const Enquiry = () => {
   const VITE_API_URL = import.meta.env.VITE_API_URL;
@@ -35,7 +36,7 @@ const Enquiry = () => {
           />
         ))
       ) : (
-        <h1>No Enquiry found</h1>
+        !loading && <EmptyBox/>
       )}
     </>
   );

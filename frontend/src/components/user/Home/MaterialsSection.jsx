@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import MaterialBox from "./MaterialBox";
 import Spinner from "../../utility/Spinner";
 import useFetchData from "../../../hooks/utils/useFetchData";
+import EmptyBox from "../../utility/EmptyBox";
 
 const MaterialsSection = () => {
   const VITE_API_URL = import.meta.env.VITE_API_URL;
@@ -38,9 +39,7 @@ const MaterialsSection = () => {
               />
             ))
           ) : (
-            <>
-              <h1>No Materials found</h1>
-            </>
+            !loading && <EmptyBox/>
           )}
         </div>
         <div className="w-11/12 mx-auto flex justify-center py-4">

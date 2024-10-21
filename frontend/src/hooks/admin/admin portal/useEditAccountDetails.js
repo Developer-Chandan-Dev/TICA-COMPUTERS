@@ -38,7 +38,6 @@ const useEditAccountDetails = (initialState, id) => {
     formDataToSend.append("email", formData.email);
     formDataToSend.append("role", formData.role);
     formDataToSend.append("profilePic", formData.profilePic);
-    formDataToSend.append("profilePicPublicId", formData.profilePicPublicId);
 
     for (const [key, value] of formDataToSend.entries()) {
       console.log(`${key}:`, value);

@@ -32,12 +32,19 @@ const updateProfile = async (req, res) => {
     const profileId = req.params.id;
     const data = req.body;
     const profilePic = req.file ? req.file.path : null; // Get local file path
+    console.log(profileId, data, profilePic);
 
     let profilePicUrl = null;
     let newProfilePicPublicId = null;
 
+    const user = await Users.findById(profileId);
+    console.log(user);
+    if (!user) {
+      return res.status(400).json({ error: "User not found" });
+    }
+
     // Delete the old profile pic if a new one is provided
-    if (data.profilePicPublicId && profilePic) {
+    if (user.profilePicPublicId && profilePic) {
       await deleteFromCloudinary(data.profilePicPublicId);
     }
 
@@ -64,6 +71,7 @@ const updateProfile = async (req, res) => {
         runValidators: true, // Run mongoose validation of schema
       }
     );
+    console.log(response);
 
     if (!response) {
       return res.status(404).json({ error: "User not found" });

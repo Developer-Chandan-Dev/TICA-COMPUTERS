@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import PopularCourseBox from "./PopularCourseBox";
 import Spinner from "../../utility/Spinner";
 import useFetchData from "../../../hooks/utils/useFetchData";
+import EmptyBox from "../../utility/EmptyBox";
 
 const PopularCourses = () => {
   const VITE_API_URL = import.meta.env.VITE_API_URL;
@@ -36,7 +37,7 @@ const PopularCourses = () => {
               />
             ))
           ) : (
-            <h1>No Popular courses found</h1>
+            !loading && <EmptyBox/>
           )}
         </div>
 

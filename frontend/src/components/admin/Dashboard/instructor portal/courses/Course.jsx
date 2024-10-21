@@ -7,6 +7,7 @@ import axios from "axios";
 import CourseInfo from "./CourseInfo";
 import Spinner from "../../../../utility/Spinner";
 import useHandleDeletewithSweetAlert from "../../../../../hooks/admin/instructor portal/useHandleDeletewithSweetAlert";
+import EmptyBox from "../../../../utility/EmptyBox";
 
 const Course = ({ searchTerm }) => {
   const VITE_API_URL = import.meta.env.VITE_API_URL;
@@ -15,16 +16,20 @@ const Course = ({ searchTerm }) => {
   const [loading, setLoading] = useState(false);
   const [checkedIds, setCheckedIds] = useState([]);
 
-  const {handleDelete} = useHandleDeletewithSweetAlert();
+  const { handleDelete } = useHandleDeletewithSweetAlert();
 
   useEffect(() => {
+    setLoading(true);
     const fetchCourses = async () => {
       try {
-        const response = await axios.get(`${VITE_API_URL}/api/v1/instructor/course/`, {
-          params: {
-            search: searchTerm,
-          },
-        });
+        const response = await axios.get(
+          `${VITE_API_URL}/api/v1/instructor/course/`,
+          {
+            params: {
+              search: searchTerm,
+            },
+          }
+        );
         const data = response.data;
         if (!data) {
           setError("Data not found");
@@ -41,10 +46,12 @@ const Course = ({ searchTerm }) => {
             }
           });
           setCheckedIds(ids);
+          setLoading(false);
           return setData(data);
         }
       } catch (error) {
         console.error("Error fetching course data:", error);
+        setLoading(false);
       }
     };
     fetchCourses();
@@ -54,13 +61,16 @@ const Course = ({ searchTerm }) => {
     // Set Course on Home page
     setLoading(true);
     try {
-      const res = await fetch(`${VITE_API_URL}/api/v1/instructor/course/home-data/${objectId}`, {
-        method: "PUT",
-        headers: { "Content-Type": "Application/json" },
-        body: JSON.stringify({
-          showOnHome: boolean,
-        }),
-      });
+      const res = await fetch(
+        `${VITE_API_URL}/api/v1/instructor/course/home-data/${objectId}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "Application/json" },
+          body: JSON.stringify({
+            showOnHome: boolean,
+          }),
+        }
+      );
 
       const data = await res.json();
       if (res.ok) {
@@ -123,38 +133,40 @@ const Course = ({ searchTerm }) => {
 
   return (
     <>
-      {data != null ? (
-        data.map(
-          ({
-            _id,
-            courseFullName,
-            duration,
-            mainTopics,
-            courseShortName,
-            coursePic,
-            showOnHome,
-          }) => (
-            <CourseInfo
-              key={_id}
-              id={_id}
-              courseFullName={courseFullName}
-              duration={duration}
-              mainTopics={mainTopics}
-              courseShortName={courseShortName}
-              coursePic={coursePic}
-              showOnHome={showOnHome}
-              isChecked={checkedIds.includes(_id)}
-              onCheckBoxChange={handleSetOnHome}
-              onDelete={handleCourseDelete}
-            />
-          )
-        )
-      ) : (
-        // <p className="text-2xl">Loading...</p>
+      {console.log(loading)}
+      {loading && (
         <div className="w-full h-[350px] flex-center ">
           <Spinner />
         </div>
       )}
+      {Array.isArray(data) && data.length > 0 && data != null
+        ? data.map(
+            ({
+              _id,
+              courseFullName,
+              duration,
+              mainTopics,
+              courseShortName,
+              coursePic,
+              showOnHome,
+            }) => (
+              <CourseInfo
+                key={_id}
+                id={_id}
+                courseFullName={courseFullName}
+                duration={duration}
+                mainTopics={mainTopics}
+                courseShortName={courseShortName}
+                coursePic={coursePic}
+                showOnHome={showOnHome}
+                isChecked={checkedIds.includes(_id)}
+                onCheckBoxChange={handleSetOnHome}
+                onDelete={handleCourseDelete}
+              />
+            )
+          )
+        : // <p className="text-2xl">Loading...</p>
+          !loading && <EmptyBox />}
     </>
   );
 };

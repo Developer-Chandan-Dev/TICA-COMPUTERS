@@ -6,6 +6,7 @@ import Spinner from "../../../utility/Spinner";
 import useHandleDeletewithSweetAlert from "../../../../hooks/admin/instructor portal/useHandleDeletewithSweetAlert";
 import axios from "axios";
 import PropTypes from "prop-types";
+import EmptyBox from "../../../utility/EmptyBox";
 
 const StudentContainer = () => {
   const VITE_API_URL = import.meta.env.VITE_API_URL;
@@ -166,7 +167,11 @@ const StudentContainer = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {loading && <Spinner />}
+                {loading && (
+        <div className="w-[400px] h-[300px] flex-center">
+          <Spinner />
+        </div>
+      )}
 
                   {error && (
                     <div className="w-[200px] h-[350px] flex-center absolute">
@@ -213,7 +218,7 @@ const StudentContainer = () => {
                       )
                     )
                   ) : (
-                    <td>No student found</td>
+                    !loading && <EmptyBox/>
                   )}
                 </tbody>
               </table>

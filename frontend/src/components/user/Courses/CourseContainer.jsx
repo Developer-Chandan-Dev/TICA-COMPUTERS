@@ -3,6 +3,7 @@ import Course from "./Course";
 import { Banner } from "../../../components/user/index";
 import useFetchData from "../../../hooks/utils/useFetchData.js";
 import Spinner from "../../utility/Spinner";
+import EmptyBox from "../../utility/EmptyBox.jsx";
 
 const CourseContainer = () => {
   const VITE_API_URL = import.meta.env.VITE_API_URL;
@@ -25,7 +26,7 @@ const CourseContainer = () => {
         <>
           {loading && <Spinner />}
           {error && <p className="text-red-500">{error}</p>}
-          {data != null ? (
+          {Array.isArray(data) && data.length > 0 && data != null ? (
             data.map(
               ({
                 _id,
@@ -49,9 +50,7 @@ const CourseContainer = () => {
               )
             )
           ) : (
-            <>
-              <h1>No Courses found</h1>
-            </>
+            !loading && <EmptyBox/>
           )}
         </>
       </div>

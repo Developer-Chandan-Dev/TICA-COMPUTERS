@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import MaterialsBox from "./MaterialsBox";
 import { toast } from "react-toastify";
 import Spinner from "../../../../utility/Spinner";
+import EmptyBox from "../../../../utility/EmptyBox";
 
 const AllMaterials = () => {
   const VITE_API_URL = import.meta.env.VITE_API_URL;
@@ -11,7 +12,9 @@ const AllMaterials = () => {
 
   useEffect(() => {
     setLoading(true);
-    const allMaterialsData = fetch(`${VITE_API_URL}/api/v1/instructor/materials`);
+    const allMaterialsData = fetch(
+      `${VITE_API_URL}/api/v1/instructor/materials`
+    );
     allMaterialsData
       .then((value) => {
         return value.json();
@@ -87,27 +90,26 @@ const AllMaterials = () => {
   return (
     <>
       <div className="flex items-center flex-wrap gap-3 ">
-        {loading && <Spinner/>}
+        {loading && <Spinner />}
         {/* {err} */}
-        {data != null ? (
-          data.map((data, index) => (
-            <MaterialsBox
-              key={index}
-              id={data._id}
-              title={data.title}
-              author={data.author}
-              desc={data.desc}
-              tag={data.tag}
-              type={data.type}
-              fileBanner={data.fileBanner}
-              createdAt={data.createdAt}
-              isChecked={checkedIds.includes(data._id)}
-              onCheckBoxChange={handleSetOnHome}
-            />
-          ))
-        ) : (
-          <h2 className="pl-2 text-2xl font-semibold">Loading...</h2>
-        )}
+        {Array.isArray(data) && data.length > 0 && data != null
+          ? data.map((data, index) => (
+              <MaterialsBox
+                key={index}
+                id={data._id}
+                title={data.title}
+                author={data.author}
+                desc={data.desc}
+                tag={data.tag}
+                type={data.type}
+                fileBanner={data.fileBanner}
+                createdAt={data.createdAt}
+                isChecked={checkedIds.includes(data._id)}
+                onCheckBoxChange={handleSetOnHome}
+              />
+            ))
+          : // <h2 className="pl-2 text-2xl font-semibold">Loading...</h2>
+            !loading && <EmptyBox boxWidth="500px" boxHeight="100%" />}
       </div>
     </>
   );

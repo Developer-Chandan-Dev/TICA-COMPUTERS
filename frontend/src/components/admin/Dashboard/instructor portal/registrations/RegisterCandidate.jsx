@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { RegisterCandidateInfo } from "../index";
 import Spinner from "../../../../utility/Spinner";
 import PropTypes from "prop-types";
+import EmptyBox from "../../../../utility/EmptyBox";
 import useHandleDeletewithSweetAlert from "../../../../../hooks/admin/instructor portal/useHandleDeletewithSweetAlert";
 
 const RegisterCandidate = ({ searchTerm, currentPage, setTotalPages }) => {
@@ -79,55 +80,53 @@ const RegisterCandidate = ({ searchTerm, currentPage, setTotalPages }) => {
 
   return (
     <>
-      {loading && <Spinner />}
+      {loading && (
+        <div className="w-[400px] h-[300px] flex-center">
+          <Spinner />
+        </div>
+      )}
       {error && (
         <div className="w-[200px] h-[350px] flex-center absolute">
           <p className="text-red-500">{error}</p>
         </div>
       )}
-      {Array.isArray(candidates) &&
-      candidates.length > 0 &&
-      candidates != null ? (
-        candidates.map(
-          ({
-            _id,
-            courseName,
-            candidateName,
-            fathername,
-            mothername,
-            DOB,
-            registrationDate,
-            gender,
-            address,
-            mobile,
-          }) => (
-            <RegisterCandidateInfo
-              key={_id}
-              id={_id}
-              courseName={courseName}
-              candidateName={candidateName}
-              fathername={fathername}
-              mothername={mothername}
-              dob={DOB}
-              registrationDate={registrationDate}
-              gender={gender}
-              address={address}
-              mobile={mobile}
-              isChecked={checkedIds.includes(_id)}
-              onCheckboxChange={handleApprove}
-              onDelete={handleDeleteWithcheckedIds}
-              setData={setCandidates}
-              data={candidates}
-              setChecked={setCheckedIds}
-              checked={checkedIds}
-            />
+      {Array.isArray(candidates) && candidates.length > 0 && candidates != null
+        ? candidates.map(
+            ({
+              _id,
+              courseName,
+              candidateName,
+              fathername,
+              mothername,
+              DOB,
+              registrationDate,
+              gender,
+              address,
+              mobile,
+            }) => (
+              <RegisterCandidateInfo
+                key={_id}
+                id={_id}
+                courseName={courseName}
+                candidateName={candidateName}
+                fathername={fathername}
+                mothername={mothername}
+                dob={DOB}
+                registrationDate={registrationDate}
+                gender={gender}
+                address={address}
+                mobile={mobile}
+                isChecked={checkedIds.includes(_id)}
+                onCheckboxChange={handleApprove}
+                onDelete={handleDeleteWithcheckedIds}
+                setData={setCandidates}
+                data={candidates}
+                setChecked={setCheckedIds}
+                checked={checkedIds}
+              />
+            )
           )
-        )
-      ) : (
-        <div className="w-[200px] h-[350px] flex-center absolute">
-          <h1>No candidates found</h1>
-        </div>
-      )}
+        : !loading && <EmptyBox />}
     </>
   );
 };

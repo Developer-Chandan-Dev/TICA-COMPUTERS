@@ -188,6 +188,8 @@ const useUpdateCourseForm = (initialState, method, onChange) => {
         },
       });
 
+      console.log(response, response.data, '191');
+
       setLoading(false);
       setFormData(initialState);
       return response.data;

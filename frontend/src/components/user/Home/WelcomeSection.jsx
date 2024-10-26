@@ -18,10 +18,10 @@ const WelcomeSection = () => {
     <>
       <section className="w-full h-auto py-3 px-0 sm:p-3 text-sm">
         <div className="w-full sm:w-11/12 mx-auto py-10 flex items-start justify-between welcomeSection flex-wrap">
-          <div
-            className="contentSection w-3/5 px-3 sm:px-0 opacity-0 -translate-x-20"
-          >
-            <h1 className="text-3xl heading my-1 font-medium">WELCOME TO TICA COMPUTERS</h1>
+          <div className="contentSection w-3/5 px-3 sm:px-0 opacity-0 -translate-x-20">
+            <h1 className="text-3xl heading my-1 font-medium">
+              WELCOME TO TICA COMPUTERS
+            </h1>
             <h4 className="text-sm heading-bottom mt-3 after:block after:w-24 after:rounded-full after:h-1 after:bg-red-500 after:mt-2">
               TECHNOSOFT INSTITUTE OF COMPUTER ACCOUNTING
             </h4>
@@ -30,11 +30,12 @@ const WelcomeSection = () => {
               style={{ lineHeight: "22px" }}
             >
               <p>
-                Sanjay Gandhi Computer Saksharta Mission Trust has been
-                registered under the Public Trust Act 1882 (Reg.No.2327) from
-                Govt. Of India N.C.T., Delhi working in different fields of
-                Programme & Commercial Training Organizatio nis also certified
-                by ISO 90001: 2015 Org.
+                TICA computers institute is a computer institute who is
+                providing lots of computers courses for students. This institute
+                is connected from Sanjay Gandhi Computer Saksharta Mission(SGCM)
+                for providing course certifications. SGCM registered under the
+                Public Trust Act 1882 (Reg.No. 2327) from Govt. fo india (NCT)
+                and certified by ISO 90001: 2025 org also.
               </p>
               <br />
               <p>

@@ -22,12 +22,13 @@ const FounderSection = () => {
                 this Institute.
               </p>
               <p className="py-3 hidden lg:block text-[15px]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-                modi quae minima enim placeat molestias illum veritatis
-                perspiciatis ex magnam aut assumenda reprehenderit at mollitia
-                expedita repellendus pariatur, aliquam porro?
+                Shailendra Kumar Bind is Instructor and Founder of this
+                institute with around 10 years experience of teaching computer
+                courses.
               </p>
-              <button className="sm !text-slate-50 mt-2">More Details...</button>
+              <button className="sm !text-slate-50 mt-2">
+                More Details...
+              </button>
             </div>
           </div>
         </div>
